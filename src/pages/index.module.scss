@@ -1,0 +1,31 @@
+@font-face {
+    font-family: Aloevera;
+    src: url('../../../tucson-music-box/public/fonts/Aloevera-OVoWO.ttf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.title
+{
+    font-family: Aloevera;
+    font-weight: bolder;
+    font-size:70px;
+}
+.container{
+    text-align: center;
+    p{
+        font-family: 'Rubik', sans-serif;
+        padding: 10px;
+    }
+    button{
+        border: black solid;
+        padding: 10px 60px 10px 60px;
+        color: #000;
+        font-family: sans-serif;
+        font-size: 18px;
+        text-transform: 'uppercase';
+    }
+}
+.accesories{
+    width: 80%;
+    margin: 0 auto;
+}

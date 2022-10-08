@@ -3,11 +3,14 @@ import Wrapper from "./com/wrapper";
 import Title from "./com/title";
 import Subtitle from "./com/sub";
 
-const bogliasco = "https://i.imgur.com/Gu5Cznz.jpg";
-const countyClare = "https://i.imgur.com/idjXzVQ.jpg";
-const craterRock = "https://i.imgur.com/8DYumaY.jpg";
-const giauPass = "https://i.imgur.com/8IuucQZ.jpg";
-
+const rockSalt =
+  "https://static.wixstatic.com/media/73997b6d6824436ab296f0bba712b75a.jpg/v1/fill/w_1899,h_950,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/73997b6d6824436ab296f0bba712b75a.jpg";
+const jewels =
+  "https://static.wixstatic.com/media/4d074f966f2542ffb3d1ce823dce0ad9.jpg/v1/fill/w_1899,h_950,al_l,q_85,usm_0.66_1.00_0.01,enc_auto/4d074f966f2542ffb3d1ce823dce0ad9.jpg";
+const marble =
+  "https://static.wixstatic.com/media/bebe38_5d2625d6991d48d194527b7c77ab276e~mv2.jpg/v1/crop/x_0,y_426,w_2250,h_1662/fill/w_386,h_275,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_1367_edited.jpg";
+const vol =
+  "https://static.wixstatic.com/media/27f47b97593c44f4b1a985fe5627aaf9.jpg/v1/fill/w_1899,h_998,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/27f47b97593c44f4b1a985fe5627aaf9.jpg";
 export default function BasicSlider() {
   return (
     <HeroSlider
@@ -31,42 +34,42 @@ export default function BasicSlider() {
     >
       <Overlay>
         <Wrapper>
-          <Title>Basic Setup</Title>
+          <Title>Revisit Your Childhood</Title>
           <Subtitle>
-            Check out the documentation for more advanced examples.
+            Explore and experience the assortment of oddities available on
+            Tucson Music Box
           </Subtitle>
         </Wrapper>
       </Overlay>
 
       <Slide
         shouldRenderMask
-        label="Giau Pass - Italy"
+        label="Assorted Jewels"
         background={{
-          backgroundImageSrc: giauPass,
+          backgroundImageSrc: jewels,
+        }}
+      />
+      <Slide
+        shouldRenderMask
+        label="Marbled Quartz"
+        background={{
+          backgroundImageSrc: marble,
         }}
       />
 
       <Slide
         shouldRenderMask
-        label="Bogliasco - Italy"
+        label="Pink Rock Salt"
         background={{
-          backgroundImageSrc: bogliasco,
+          backgroundImageSrc: rockSalt,
         }}
       />
 
       <Slide
         shouldRenderMask
-        label="County Clare - Ireland"
+        label=""
         background={{
-          backgroundImageSrc: countyClare,
-        }}
-      />
-
-      <Slide
-        shouldRenderMask
-        label="Crater Rock, OR - United States"
-        background={{
-          backgroundImageSrc: craterRock,
+          backgroundImageSrc: vol,
         }}
       />
 

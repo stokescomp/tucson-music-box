@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
-import ReactCardCarousel from 'react-card-carousel';
+import React, { Component } from "react";
+import ReactCardCarousel from "react-card-carousel";
 
 class MyCarousel extends Component {
   static get CONTAINER_STYLE() {
     return {
-      position: 'relative',
-      height: '100vh',
-      width: '100%',
-      display: 'flex',
+      position: "relative",
+      height: "100vh",
+      width: "100%",
+      display: "flex",
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'middle',
+      justifyContent: "center",
+      alignItems: "middle",
     };
   }
 
   static get CARD_STYLE() {
     return {
-      height: '450px',
-      width: '300px',
+
+      height: '550px',
+      width: '350px',
       paddingTop: '80px',
       textAlign: 'center',
       background: '#eee',
@@ -28,6 +29,7 @@ class MyCarousel extends Component {
       borderRadius: '3px',
       margin: '0 200px',
       boxSizing: 'border-box',
+
     };
   }
 
@@ -37,14 +39,14 @@ class MyCarousel extends Component {
         <ReactCardCarousel
           autoplay={false}
           autoplay_speed={2500}
-          spread={'wide'}
+          spread={"wide"}
           disable_box_shadow={true}
         >
-          <div style={MyCarousel.CARD_STYLE}>First Card</div>
-          <div style={MyCarousel.CARD_STYLE}>Second Card</div>
-          <div style={MyCarousel.CARD_STYLE}>Third Card</div>
-          <div style={MyCarousel.CARD_STYLE}>Fourth Card</div>
-          <div style={MyCarousel.CARD_STYLE}>Fifth Card</div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
         </ReactCardCarousel>
       </div>
     );
