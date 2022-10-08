@@ -18,30 +18,36 @@ import Badge from '@mui/material/Badge';
 import { selectProducts } from '../slices/basketSlice';
 
 let pages;
-const productsLink = <div className={style.navcontainer}>
+const productsLink = 
+<div className={style.navcontainer}>
   <Link href='/shop'><a className={style.links}> Gems and Minerals</a></Link>
+  <br></br>
             <Link href='/shop'>
             <a className={style.links}>
                 Fossils and Specimen
               </a>
             </Link>
+            <br></br>
             <Link href='/'>
             <a className={style.links}>
                 Lamps and Trees
               </a>
             </Link>
+            <br></br>
             
             <Link href='/'>
               <a className={style.links}>
                 Keepsake Boxes
               </a>
             </Link>
+            <br></br>
             
             <Link href='/'>
               <a className={style.links}>
                 Accessories 
               </a>
             </Link>
+            <br></br>
             
           <Link href='/profile'>
             <a>Login </a>
