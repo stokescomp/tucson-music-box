@@ -1,5 +1,9 @@
+
+import Link from 'next/link';
+
 import Index from "../components/categories-carousel";
 import MyCarousel from "../components/accesories/index.js"
+
 
 export default function Home() {
   return (
@@ -23,6 +27,7 @@ export default function Home() {
           </div>
         </div>
       <MyCarousel />
+
     </div>
   );
 }
