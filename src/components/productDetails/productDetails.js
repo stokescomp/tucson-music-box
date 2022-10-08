@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Alert, Button, IconButton, Snackbar } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 
 import styles from './styles.module.css';
 import { addToBasket } from '../../slices/basketSlice';
@@ -14,6 +16,7 @@ function ProductDetails({
   id,
 }) {
   const dispatch = useDispatch();
+  const [open, setOpen] = useState(false);
 
   const addToCart = () => {
     const product = {
@@ -26,8 +29,16 @@ function ProductDetails({
       id,
     };
 
-    console.log(product);
     dispatch(addToBasket(product));
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
@@ -43,6 +54,12 @@ function ProductDetails({
 
         <button onClick={addToCart}>Add to cart</button>
       </div>
+
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity='success' sx={{ width: '100%' }}>
+          Successfully added to cart!
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
