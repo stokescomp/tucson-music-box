@@ -7,11 +7,10 @@ import Product from '../../components/product/product';
 
 function Index() {
   const [screenSize, setScreenSize] = useState(0);
-  console.log(screenSize);
 
   useEffect(() => {
+    window.addEventListener('load', setScreenSize(window.innerWidth));
     window.addEventListener('resize', () => setScreenSize(window.innerWidth));
-    // setScreenSize(window.innerWidth);
   }, []);
 
   return (

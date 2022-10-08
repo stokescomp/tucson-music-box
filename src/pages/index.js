@@ -1,13 +1,26 @@
-
+import { useEffect, useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
 
 import BasicSlider from '../components/hero';
 import MyCarousel from '../components/accesories/index.js';
 import Categories from '../components/categories-carousel/categories';
-import style from './index.module.scss'
-
-
+import style from './index.module.scss';
+import { firestore } from '../../firebase';
 
 export default function Home() {
+  const [products, setProducts] = useState(null);
+  console.log(products);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const productsSnapshot = await getDocs(collection(firestore, 'products'));
+      const productsList = productsSnapshot.docs.map((doc) => doc.data());
+      setProducts(productsList);
+    };
+
+    getProducts();
+  }, []);
+
   return (
     <div className={style.container}>
       <BasicSlider />
@@ -18,7 +31,7 @@ export default function Home() {
         <p>Book Viking Treasures</p>
         <button>Shop All</button>
       </div>
-      <Categories/>
+      <Categories />
       <div className={style.accesories}>
         <h1 className={style.title}>Accesories</h1>
         <div>
@@ -36,10 +49,12 @@ export default function Home() {
         <h1 className={style.title}>Contact Us</h1>
         <p>Have questions?</p>
         <br></br>
-        <p>Please reach out! We will respond to you within 2-3 business days.</p>
+        <p>
+          Please reach out! We will respond to you within 2-3 business days.
+        </p>
         <button>Contact Us</button>
       </div>
-      <footer/>
+      <footer />
     </div>
   );
 }
