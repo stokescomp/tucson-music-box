@@ -5,14 +5,14 @@ export default function Home() {
   return (
     <div>
       <div>
-        <h1>Categories</h1>
+        <h1 className={index.title}>Categories</h1>
         <span>Rediscover your childhood</span>
         <span>Book Viking Treasures</span>
         <button>Shop All</button>
       </div>
       <Index />
         <div>
-          <h1>Accesories</h1>
+          <h1 className={index.title}>Accesories</h1>
           <div>
             <p>Gems, minerals, rose quartz, jewelry, 
             and butterfly specimens fill our storefront. 
