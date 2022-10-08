@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
 import FilterDrawer from '../../components/filterDrawer/filterDrawer';
+import Filter from '../../components/filter/filter';
 import styles from './styles.module.css';
 
 function Index() {
   const [screenSize, setScreenSize] = useState(0);
+  console.log(screenSize);
 
   useEffect(() => {
     window.addEventListener('resize', () => setScreenSize(window.innerWidth));
-  });
+    // setScreenSize(window.innerWidth);
+  }, []);
 
   return (
     <>
@@ -20,9 +23,9 @@ function Index() {
         for any loved one!
       </h3>
 
-      <div>
-        {screenSize <= 600 && <FilterDrawer />}
-        <div className={styles.shop__container}>
+      <div className={styles.shop__container}>
+        {screenSize <= 600 ? <FilterDrawer /> : <Filter />}
+        <div>
           <p>Product</p>
           <p>Product</p>
           <p>Product</p>
