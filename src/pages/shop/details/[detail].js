@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 import { doc, getDoc } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
-
 import { firestore } from '../../../../firebase';
 import ProductDetails from '../../../components/productDetails/productDetails';
 

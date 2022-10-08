@@ -19,19 +19,21 @@ class Categories extends Component {
       height: '500px',
       width: '400px',
       textAlign: 'center',
-      background: '#eee',
-      color: '#000',
-      fontFamily: 'sans-serif',
+      background: '#59534A',
+      color: '#F8F6F1',
+      fontFamily: 'Rubik',
       fontSize: '14px',
-      textTransform: 'uppercase',
       borderRadius: '3px',
-      margin: '0 200px',
+      border: 'solid',
+      borderWidth: '8px',
+      margin: '0px 200px',
       boxSizing: 'border-box',
     };
   }
   static get IMAGE() {
     return {
-      width: '400px',
+      width: '385px',
+      padding: '0px 0px 0px 0px'
     };
   }
 
@@ -44,9 +46,32 @@ class Categories extends Component {
           spread={'wide'}
           disable_box_shadow={true}
         >
-          <div style={Categories.CARD_STYLE}><img style={Categories.IMAGE} src='/images/img.png'></img><h2>Rocks</h2></div>
-          <div style={Categories.CARD_STYLE}><img style={Categories.IMAGE} src='/images/img.png'/><h2>Crowns</h2></div>
-          <div style={Categories.CARD_STYLE}><img style={Categories.IMAGE} src='/images/img.png'/><h2>Gems</h2></div>
+          <div style={Categories.CARD_STYLE}><img style={Categories.IMAGE} src='https://static.wixstatic.com/media/bebe38_bdf4bc6147e44183a0de5632552be792~mv2.jpg/v1/crop/x_0,y_23,w_4032,h_2978/fill/w_461,h_341,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/20201118_115540.jpg'></img>
+          <h2>Rocks</h2>
+          <p>Lorem ipsum dolor sit amet, 
+          consectetur adipiscing elit, sed do eiusmod 
+          tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation 
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          Duis aute irure dolor in reprehenderit in voluptate velit 
+          esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+          <div style={Categories.CARD_STYLE}><img style={Categories.IMAGE} src='https://static.wixstatic.com/media/bebe38_0d91ec83100b4fb789530dd0f8cd252a~mv2.jpg/v1/fill/w_459,h_339,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/20201119_144815.jpg'/>
+          <h2>Crowns</h2>
+          <p>Lorem ipsum dolor sit amet, 
+          consectetur adipiscing elit, sed do eiusmod 
+          tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation 
+          ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div style={Categories.CARD_STYLE}><img style={Categories.IMAGE} src='https://static.wixstatic.com/media/bebe38_61a9342e155341cb82356f248fa42ab8~mv2.jpg/v1/crop/x_0,y_858,w_2250,h_1665/fill/w_461,h_341,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_1200_edited.jpg'/>
+          <h2>Gems</h2>
+          <p>Lorem ipsum dolor sit amet, 
+          consectetur adipiscing elit, sed do eiusmod 
+          tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation 
+          ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
         </ReactCardCarousel>
       </div>
     );

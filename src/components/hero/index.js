@@ -5,8 +5,8 @@ import Subtitle from "./com/sub";
 
 const rockSalt =
   "https://static.wixstatic.com/media/73997b6d6824436ab296f0bba712b75a.jpg/v1/fill/w_1899,h_950,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/73997b6d6824436ab296f0bba712b75a.jpg";
-const jewels =
-  "https://static.wixstatic.com/media/4d074f966f2542ffb3d1ce823dce0ad9.jpg/v1/fill/w_1899,h_950,al_l,q_85,usm_0.66_1.00_0.01,enc_auto/4d074f966f2542ffb3d1ce823dce0ad9.jpg";
+const rubilite =
+  "https://static.wixstatic.com/media/bebe38_fccb654c00e34095a1f57608261b07c1~mv2.jpg/v1/fill/w_461,h_341,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/20201118_115654.jpg";
 const marble =
   "https://static.wixstatic.com/media/bebe38_5d2625d6991d48d194527b7c77ab276e~mv2.jpg/v1/crop/x_0,y_426,w_2250,h_1662/fill/w_386,h_275,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/IMG_1367_edited.jpg";
 const vol =
@@ -44,9 +44,9 @@ export default function BasicSlider() {
 
       <Slide
         shouldRenderMask
-        label="Assorted Jewels"
+        label="Rubilite"
         background={{
-          backgroundImageSrc: jewels,
+          backgroundImageSrc: rubilite,
         }}
       />
       <Slide

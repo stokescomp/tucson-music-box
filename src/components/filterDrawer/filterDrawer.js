@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as React from "react";
 import PropTypes from "prop-types";
 import { Global } from "@emotion/react";
@@ -10,6 +11,16 @@ import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Checkbox from "@mui/material/Checkbox";
+=======
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { styled } from '@mui/material/styles';
+import { grey } from '@mui/material/colors';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import Checkbox from '@mui/material/Checkbox';
+>>>>>>> d778855448a094fe15b6dc36e4f6b5f227134021
 
 import styles from "./filterDrawer.module.css";
 import { FormControlLabel, FormGroup } from "@mui/material";
@@ -26,18 +37,12 @@ const Root = styled("div")(({ theme }) => ({
 }));
 
 const StyledBox = styled(Box)(({ theme }) => ({
+<<<<<<< HEAD
   backgroundColor: theme.palette.mode === "light" ? "#354ace" : grey[800],
+=======
+  backgroundColor: theme.palette.mode === 'light' ? 'fff' : grey[800],
+>>>>>>> d778855448a094fe15b6dc36e4f6b5f227134021
 }));
-
-// const Puller = styled(Box)(({ theme }) => ({
-//   width: 30,
-//   height: 6,
-//   backgroundColor: theme.palette.mode === 'light' ? grey[300] : grey[900],
-//   borderRadius: 3,
-//   position: 'absolute',
-//   top: 4,
-//   left: 'calc(50% - 15px)',
-// }));
 
 function FilterDrawer(props) {
   const { window } = props;
@@ -66,14 +71,13 @@ function FilterDrawer(props) {
     setOpen(newOpen);
   };
 
-  // This is used only for the example
   const container =
     window !== undefined ? () => window().document.body : undefined;
   const { gems, fossils, lamps, keepsake, accessories, misc } = checkboxesState;
 
   return (
     <Root className={styles.filterDrawer__toggler}>
-      <Button onClick={toggleDrawer(true)}>Categories</Button>
+      <button onClick={toggleDrawer(true)}>Filters</button>
       <SwipeableDrawer
         container={container}
         anchor="bottom"
@@ -97,8 +101,13 @@ function FilterDrawer(props) {
             left: 0,
           }}
         >
+<<<<<<< HEAD
           <Typography sx={{ p: 2, color: "text.secondary" }}>
             Filters
+=======
+          <Typography sx={{ p: 2, color: 'text.secondary' }}>
+            Categories
+>>>>>>> d778855448a094fe15b6dc36e4f6b5f227134021
           </Typography>
         </StyledBox>
         <StyledBox
@@ -110,6 +119,7 @@ function FilterDrawer(props) {
           }}
         >
           <FormGroup className={styles.filterDrawer__filtersContainer}>
+<<<<<<< HEAD
             <FormControlLabel
               control={
                 <Checkbox
@@ -170,6 +180,14 @@ function FilterDrawer(props) {
               }
               label="Label"
             />
+=======
+            <FormControlLabel control={<Checkbox />} label='Gems and Min' />
+            <FormControlLabel control={<Checkbox />} label='Fossils & Spec' />
+            <FormControlLabel control={<Checkbox />} label='Lamps & Tress' />
+            <FormControlLabel control={<Checkbox />} label='Keepsake Boxes' />
+            <FormControlLabel control={<Checkbox />} label='Accessories' />
+            <FormControlLabel control={<Checkbox />} label='Miscellaneous' />
+>>>>>>> d778855448a094fe15b6dc36e4f6b5f227134021
           </FormGroup>
         </StyledBox>
       </SwipeableDrawer>
