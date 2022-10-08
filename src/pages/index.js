@@ -36,8 +36,7 @@ export default function Home() {
       <BasicSlider />
       <div>
         <h1 className={style.title}>Categories</h1>
-        <p>Rediscover your childhood</p>
-        <br></br>
+        <p>Rediscover your childhood favorites!</p>
         <p>Book Viking Treasures</p>
         <button><a href='/pages'>Shop All</a></button>
       </div>
@@ -57,8 +56,7 @@ export default function Home() {
       <MyCarousel />
       <div className={style.contact}>
         <h1 className={style.title}>Contact Us</h1>
-        <p>Have questions?</p>
-        <br></br>
+        <h3>Have questions?</h3>
         <p>
           Please reach out! We will respond to you within 2-3 business days.
         </p>

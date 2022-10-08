@@ -2,7 +2,7 @@
   font-family: Aloevera;
   src: url("../../../public/fonts/Aloevera-OVoWO.ttf");
 }
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 .title {
   font-family: Aloevera;
   font-weight: bolder;
@@ -12,12 +12,13 @@
   margin: 0 auto;
   background-color: #f8f6f1;
   min-height: 575px;
+  font-family: 'Poppins';
 }
 .wordscontainer {
   float: right;
   width: 50%;
   padding: 30px;
-  font-family: "Rubik";
+  font-family: "Poppins";
 }
 .wordscontainer p {
   padding: 10px;
@@ -28,7 +29,7 @@
 .form {
   width: 50%;
   padding: 40px;
-  font-family: "Rubik";
+  font-family: "Poppins";
 }
 .form input {
   padding: 10px;
