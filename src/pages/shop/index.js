@@ -32,7 +32,7 @@ function Index() {
         for any loved one!
       </h3>
       <div className={styles.modal}>
-        <TransitionsModal />
+        <TransitionsModal replace={"Edit Fields"} text="Add new Item" />
       </div>
       <div className={styles.shop__container}>
         {screenSize <= 600 ? (
