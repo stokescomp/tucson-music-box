@@ -13,6 +13,7 @@ import { fetchUserInfo } from "../slices/userSlice";
 import AdbIcon from "@mui/icons-material/Adb";
 import DiamondIcon from "@mui/icons-material/Diamond";
 import { useRouter } from "next/router";
+import style from './comps.module.scss'
 
 
 let pages;
@@ -51,9 +52,10 @@ export default function ButtonAppBar() {
   };
 
   return (
+    <div>
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
-        <Toolbar>
+        <Toolbar className={style.header}>
           <IconButton
             size='large'
             edge='start'
@@ -69,7 +71,7 @@ export default function ButtonAppBar() {
             </Link>
             <Link href="/contact">
               <Button sx={{ my: 2, color: "white", display: "block" }}>
-                <h2>Contact</h2>
+                Contact
               </Button>
             </Link>
           </Typography>
@@ -92,5 +94,6 @@ export default function ButtonAppBar() {
         </Toolbar>
       </AppBar>
     </Box>
+    </div>
   );
 }
