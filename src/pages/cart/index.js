@@ -2,12 +2,12 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import CheckoutProduct from '../../components/checkoutProduct/checkoutProduct';
 
-import { selectProducts } from '../../slices/basketSlice';
+import { selectProducts, selectSubtotal } from '../../slices/basketSlice';
 import styles from './styles.module.css';
 
 function Index() {
   const products = useSelector(selectProducts);
-  console.log(products);
+  const subtotal = useSelector(selectSubtotal);
 
   return (
     <div className={styles.cart}>
@@ -26,13 +26,13 @@ function Index() {
           <div>
             <h3>Subtotal</h3>
 
-            <span>$40</span>
+            <span>${subtotal}</span>
           </div>
 
           <div>
             <h3>Shipping</h3>
 
-            <span>Calculated at the next step</span>
+            <span>Pending</span>
           </div>
 
           <hr />

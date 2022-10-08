@@ -1,9 +1,7 @@
-.checkoutProduct__img {
-}
-
 .checkoutProduct__img img {
   width: 100%;
   height: 200px;
+  object-fit: cover;
 }
 
 .checkoutProduct__info {
@@ -43,4 +41,23 @@
   grid-row: 3;
   align-self: end;
   cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .checkoutProduct {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+  }
+
+  .checkoutProduct__img img {
+    height: 100px;
+  }
+
+  .checkoutProduct__info {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .checkoutProduct__info h3 {
+    margin: 0;
+  }
 }

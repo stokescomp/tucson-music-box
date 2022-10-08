@@ -37,7 +37,7 @@ function CheckoutProduct({
   };
 
   return (
-    <div>
+    <div className={styles.checkoutProduct}>
       <div className={styles.checkoutProduct__img}>
         <img src={imgUrl} alt={name} />
       </div>

@@ -5,6 +5,8 @@
 .cart__product {
   display: grid;
   gap: 60px;
+  max-width: 360px;
+  margin: 0 auto;
 }
 
 .cart__summary {
@@ -31,4 +33,20 @@
   border: none;
   outline-width: none;
   cursor: pointer;
+}
+
+@media screen and (min-width: 600px) {
+  .cart__product {
+    max-width: unset;
+  }
+
+  .cart__container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 30px;
+  }
+
+  .cart__summary {
+    margin-top: 0;
+  }
 }
