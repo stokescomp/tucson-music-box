@@ -10,18 +10,16 @@ import { Button } from "@mui/material";
 import { useSelector } from "react-redux";
 import { fetchUserInfo } from "../slices/userSlice";
 import AdbIcon from "@mui/icons-material/Adb";
+import DiamondIcon from "@mui/icons-material/Diamond";
 
-let pages;
-const pagesGuest = ["Products"];
+let pages = ["Products"];
 const pagesLoggedIn = ["Products", "My Orders"];
 
 export default function ButtonAppBar() {
   const userInfo = useSelector(fetchUserInfo);
-
+  console.log(userInfo);
   if (userInfo) {
     pages = pagesLoggedIn;
-  } else {
-    pages = pagesGuest;
   }
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
@@ -52,11 +50,13 @@ export default function ButtonAppBar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           ></IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-          ></Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link href="/">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                <DiamondIcon />
+              </Button>
+            </Link>
+          </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (

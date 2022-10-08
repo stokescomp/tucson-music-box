@@ -23,9 +23,10 @@ function Profile() {
 
   const setData = () => {
     const data = user ? { name: "jackson", userType: 1 } : null;
+    // const data = user;
+
     dispatch(addUserInfo(data));
   };
-  console.log(userInfo);
 
   const logout = async () => {
     router.push("/");
