@@ -42,7 +42,7 @@ class MyCarousel extends Component {
           spread={"wide"}
           disable_box_shadow={true}
         >
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img src=""></img><h2></h2></div>
           <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
           <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
           <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
