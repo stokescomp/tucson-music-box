@@ -1,15 +1,14 @@
 import * as React from "react";
-import contact from './contact.module.css'
+import contact from './contact.module.scss'
 export default function Contact() {
     return (
       <>
-        <div>
+        <div className={contact.maincontainer}>
         <div className={contact.wordscontainer}>
-            <h1>Contact Us!</h1>
+            <h1 className={contact.title}>Contact Us!</h1>
             <p>We'd love to hear any feedback or questions you have for us.</p>
             <p>Location: Book Viking 155 W. Main St. Suite #10 Rexburg ID 83440</p>
             <p>Store Hours: Monday-Friday 11am-6pm</p>
-            <p>Text number: (708)501-4188</p>
             <p>Phone number: (208) 359-6190</p>
         </div>
         <div className={contact.form}>
@@ -22,7 +21,7 @@ export default function Contact() {
                 <input type='text' name='email'></input><br></br>
                 <label className={contact.message} for='message'>Message:</label><br></br>
                 <input type='text' name='message'></input><br></br>
-                <input type="submit" value="Submit">Send</input>
+                <input type="submit" value="Submit"></input>
             </form>
             </div>
         </div>

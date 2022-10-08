@@ -67,7 +67,7 @@ export default function ButtonAppBar() {
                 <DiamondIcon />
               </Button>
             </Link>
-            <Link href="../pages/contact/contact.js">
+            <Link href="/contact">
               <Button sx={{ my: 2, color: "white", display: "block" }}>
                 <h2>Contact</h2>
               </Button>
