@@ -10,13 +10,17 @@ import TransitionsModal from "../../components/modal/modal";
 
 function Index() {
   const [screenSize, setScreenSize] = useState(0);
-  const products = useSelector(fetchAllProducts);
+  let products = useSelector(fetchAllProducts);
 
   useEffect(() => {
     window.addEventListener("load", setScreenSize(window.innerWidth));
     window.addEventListener("resize", () => setScreenSize(window.innerWidth));
+    filterProducts();
   }, []);
 
+  const filterProducts = () => {
+    // console.log((products[5] = null));
+  };
   return (
     <>
       <h1>Shop</h1>
@@ -30,7 +34,11 @@ function Index() {
         <TransitionsModal />
       </div>
       <div className={styles.shop__container}>
-        {screenSize <= 600 ? <FilterDrawer /> : <Filter />}
+        {screenSize <= 600 ? (
+          <FilterDrawer filter={filterProducts} />
+        ) : (
+          <Filter filter={filterProducts} />
+        )}
         <div className={styles.shop__products}>
           {products.map((product, i) => (
             <Product key={i} {...product} />
