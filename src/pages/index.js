@@ -60,7 +60,7 @@ export default function Home() {
         <p>
           Please reach out! We will respond to you within 2-3 business days.
         </p>
-        <button><a href='/pages/contact/contact.js'>Contact Us</a></button>
+        <button><a href='http://localhost:3000/contact'>Contact Us</a></button>
       </div>
       <br></br>
       <footer />
