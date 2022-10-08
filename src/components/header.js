@@ -18,7 +18,35 @@ import Badge from '@mui/material/Badge';
 import { selectProducts } from '../slices/basketSlice';
 
 let pages;
-const productsLink = <Link href='/shop'>Products</Link>;
+const productsLink = <div className={style.navcontainer}>
+  <Link href='/shop'><a className={style.links}> Gems and Minerals</a></Link>
+            <Link href='/shop'>
+            <a className={style.links}>
+                Fossils and Specimen
+              </a>
+            </Link>
+            <Link href='/'>
+            <a className={style.links}>
+                Lamps and Trees
+              </a>
+            </Link>
+            
+            <Link href='/'>
+              <a className={style.links}>
+                Keepsake Boxes
+              </a>
+            </Link>
+            
+            <Link href='/'>
+              <a className={style.links}>
+                Accessories 
+              </a>
+            </Link>
+            
+          <Link href='/profile'>
+            <a>Login </a>
+          </Link>
+          </div>;
 
 const pagesLoggedOut = [productsLink];
 const pagesLoggedIn = [productsLink, 'My Orders'];
@@ -72,6 +100,7 @@ export default function ButtonAppBar() {
                 <DiamondIcon />
               </Button>
             </Link>
+
             <Link href='/contact'>
               <Button sx={{ my: 2, color: 'white', display: 'block' }}>
                 Contact
@@ -91,19 +120,6 @@ export default function ButtonAppBar() {
             ))}
           </Box>
 
-          <Link href='/profile'>
-            <Button color='inherit'>Login</Button>
-          </Link>
-
-          <Link href='/cart'>
-            <Badge
-              badgeContent={products.length}
-              showZero={true}
-              color='secondary'
-            >
-              <ShoppingCartIcon />
-            </Badge>
-          </Link>
         </Toolbar>
       </AppBar>
     </Box>

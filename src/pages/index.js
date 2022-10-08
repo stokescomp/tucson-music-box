@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { useDispatch } from 'react-redux';
-
 import BasicSlider from '../components/hero';
-import MyCarousel from '../components/accesories/index.js';
+import MyCarousel from '../components/accessories/index.js';
 import Categories from '../components/categories-carousel/categories';
 import style from './index.module.scss';
 import { firestore } from '../../firebase';
@@ -40,7 +39,7 @@ export default function Home() {
         <p>Rediscover your childhood</p>
         <br></br>
         <p>Book Viking Treasures</p>
-        <button>Shop All</button>
+        <button><a href='/pages'>Shop All</a></button>
       </div>
       <Categories />
       <div className={style.accesories}>
@@ -53,7 +52,7 @@ export default function Home() {
             new home accent or gift for any loved one!
           </p>
         </div>
-        <button>Shop All</button>
+        <button><a href='/pages'>Shop All</a></button>
       </div>
       <MyCarousel />
       <div className={style.contact}>
@@ -63,7 +62,7 @@ export default function Home() {
         <p>
           Please reach out! We will respond to you within 2-3 business days.
         </p>
-        <button>Contact Us</button>
+        <button><a href='/pages/contact/contact.js'>Contact Us</a></button>
       </div>
       <br></br>
       <footer />
