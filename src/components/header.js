@@ -17,7 +17,35 @@ import style from './comps.module.scss'
 
 
 let pages;
-const productsLink = <Link href='/shop'>Products</Link>;
+const productsLink = <div className={style.navcontainer}>
+  <Link href='/shop'><a className={style.links}> Gems and Minerals</a></Link>
+            <Link href='/shop'>
+            <a className={style.links}>
+                Fossils and Specimen
+              </a>
+            </Link>
+            <Link href='/'>
+            <a className={style.links}>
+                Lamps and Trees
+              </a>
+            </Link>
+            
+            <Link href='/'>
+              <a className={style.links}>
+                Keepsake Boxes
+              </a>
+            </Link>
+            
+            <Link href='/'>
+              <a className={style.links}>
+                Accessories 
+              </a>
+            </Link>
+            
+          <Link href='/profile'>
+            <a>Login </a>
+          </Link>
+          </div>;
 
 const pagesLoggedOut = [productsLink];
 const pagesLoggedIn = [productsLink, 'My Orders'];
@@ -70,36 +98,6 @@ export default function ButtonAppBar() {
               </Button>
             </Link>
           </Typography>
-          <Link href="/">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Gems and Minerals |
-              </Button>
-          </Link>
-          <Link href="/">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Fossils and Specimen |
-              </Button>
-          </Link> 
-          <Link href="/">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Lamps and Trees |
-              </Button>
-          </Link>
-          <Link href="/contact">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Keepsake Boxes |
-              </Button>
-          </Link>
-          <Link href="/contact">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Accesories |
-              </Button>
-          </Link>
-            <Link href="/contact">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Contact
-              </Button>
-            </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -111,10 +109,6 @@ export default function ButtonAppBar() {
               </Button>
             ))}
           </Box>
-
-          <Link href='/profile'>
-            <Button color='inherit'>Login</Button>
-          </Link>
         </Toolbar>
       </AppBar>
     </Box>
