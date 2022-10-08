@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import React from "react";
 import { useState } from "react";
@@ -14,12 +13,11 @@ import AdbIcon from "@mui/icons-material/Adb";
 import DiamondIcon from "@mui/icons-material/Diamond";
 import { useRouter } from "next/router";
 
-
 let pages;
-const productsLink = <Link href='/shop'>Products</Link>;
+const productsLink = <Link href="/shop">Products</Link>;
 
 const pagesLoggedOut = [productsLink];
-const pagesLoggedIn = [productsLink, 'My Orders'];
+const pagesLoggedIn = [productsLink, "My Orders"];
 
 export default function ButtonAppBar() {
   const userInfo = useSelector(fetchUserInfo);
@@ -52,42 +50,42 @@ export default function ButtonAppBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static'>
+      <AppBar position="static">
         <Toolbar>
           <IconButton
-            size='large'
-            edge='start'
-            color='inherit'
-            aria-label='menu'
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
             sx={{ mr: 2 }}
           ></IconButton>
-          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            <Link href='/'>
-              <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link href="/">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
                 <DiamondIcon />
               </Button>
             </Link>
-            <Link href="../pages/contact/contact.js">
+            <Link href="/contact/contact">
               <Button sx={{ my: 2, color: "white", display: "block" }}>
-                <h2>Contact</h2>
+                Contact
               </Button>
             </Link>
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
               </Button>
             ))}
           </Box>
 
-          <Link href='/profile'>
-            <Button color='inherit'>Login</Button>
+          <Link href="/profile">
+            <Button color="inherit">Login</Button>
           </Link>
         </Toolbar>
       </AppBar>
