@@ -52,18 +52,7 @@ function FilterDrawer(props) {
 
   return (
     <Root className={styles.filterDrawer__toggler}>
-      {/* <CssBaseline /> */}
-      {/* <Global
-        styles={{
-          '.MuiDrawer-root > .MuiPaper-root': {
-            height: `calc(50% - ${drawerBleeding}px)`,
-            overflow: 'visible',
-          },
-        }}
-      /> */}
-      {/* <Box sx={{ textAlign: 'center', pt: 1 }}> */}
       <Button onClick={toggleDrawer(true)}>Categories</Button>
-      {/* </Box> */}
       <SwipeableDrawer
         container={container}
         anchor='bottom'
@@ -87,7 +76,6 @@ function FilterDrawer(props) {
             left: 0,
           }}
         >
-          {/* <Puller /> */}
           <Typography sx={{ p: 2, color: 'text.secondary' }}>
             Filters
           </Typography>
@@ -115,10 +103,6 @@ function FilterDrawer(props) {
 }
 
 FilterDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
