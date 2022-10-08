@@ -1,5 +1,5 @@
-import * as React from "react";
-import contact from "./contact.module.scss";
+import * as React from 'react';
+import contact from './contact.module.scss';
 export default function Contact() {
   return (
     <>
@@ -7,7 +7,7 @@ export default function Contact() {
         <div className={contact.wordscontainer}>
           <h1 className={contact.title}>Contact Us!</h1>
           <hr></hr>
-          <p>We'd love to hear any feedback or questions you have for us.</p>
+          <p>Wed love to hear any feedback or questions you have for us.</p>
           <p>
             Location: Book Viking 155 W. Main St. Suite #10 Rexburg ID 83440
           </p>
@@ -16,36 +16,36 @@ export default function Contact() {
         </div>
         <div className={contact.form}>
           <form>
-            <label className={contact.personalinfo} for="firstName">
+            <label className={contact.personalinfo} for='firstName'>
               First Name:
             </label>
             <br></br>
-            <input type="text" name="firstName"></input>
+            <input type='text' name='firstName'></input>
             <br></br>
-            <label className={contact.personalinfo} for="lastName">
+            <label className={contact.personalinfo} for='lastName'>
               Last Name:
             </label>
             <br></br>
-            <input type="text" name="LasttName"></input>
+            <input type='text' name='LasttName'></input>
             <br></br>
-            <label className={contact.personalinfo} for="email">
+            <label className={contact.personalinfo} for='email'>
               Email:
             </label>
             <br></br>
-            <input type="text" name="email"></input>
+            <input type='text' name='email'></input>
             <br></br>
-            <label className={contact.message} for="message">
+            <label className={contact.message} for='message'>
               Message:
             </label>
             <br></br>
-            <input type="text" name="message"></input>
+            <input type='text' name='message'></input>
             <br></br>
-            <label for="submit"></label>
+            <label for='submit'></label>
             <br></br>
             <input
               className={contact.submit}
-              type="submit"
-              value="Submit"
+              type='submit'
+              value='Submit'
             ></input>
           </form>
         </div>

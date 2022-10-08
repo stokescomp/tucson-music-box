@@ -9,23 +9,33 @@ const nextConfig = {
 
 // module.exports = withTM({});
 
-module.exports = withPlugins(
-  [
-    [
-      {
-        images: {
-          domains: ['via.placeholder.com'],
-        },
-      },
-    ],
-    [
-      {
-        env: {
-          stripe_public_key: process.env.STRIPE_PUBLIC_KEY,
-        },
-      },
-    ],
-    [withTM({})],
-  ],
-  nextConfig
-);
+// module.exports = withPlugins(
+//   [
+//     [
+//       {
+//         images: {
+//           domains: ['via.placeholder.com'],
+//         },
+//       },
+//     ],
+//     [
+//       {
+//         env: {
+//           stripe_public_key: process.env.STRIPE_PUBLIC_KEY,
+//         },
+//       },
+//     ],
+//     [withTM({})],
+//   ],
+//   nextConfig
+// );
+
+module.exports = {
+  images: {
+    domains: ['via.placeholder.com'],
+  },
+
+  env: {
+    stripe_public_key: process.env.STRIPE_PUBLIC_KEY,
+  },
+};
