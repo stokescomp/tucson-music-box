@@ -16,8 +16,8 @@ class Categories extends Component {
 
   static get CARD_STYLE() {
     return {
-      height: '300px',
-      width: '300px',
+      height: '500px',
+      width: '400px',
       textAlign: 'center',
       background: '#eee',
       color: '#000',
@@ -31,7 +31,7 @@ class Categories extends Component {
   }
   static get IMAGE() {
     return {
-      width: '300px',
+      width: '400px',
     };
   }
 
