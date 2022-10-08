@@ -1,6 +1,6 @@
 @font-face {
   font-family: Aloevera;
-  src: url("/public/fonts/Aloevera-OVoWO.ttf");
+  src: url('/public/fonts/Aloevera-OVoWO.ttf');
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -8,14 +8,16 @@
   font-family: Aloevera;
   font-weight: bolder;
   font-size: 70px;
-  color: #2F2A22;
+  color: #2f2a22;
+  padding-top: 45px;
 }
 .container {
   text-align: center;
-  background-color: #F8F6F1;
-  color: #2F2A22;
-  p, h3 {
-    font-family: "Poppins", sans-serif;
+  background-color: #f8f6f1;
+  color: #2f2a22;
+  p,
+  h3 {
+    font-family: 'Poppins', sans-serif;
     padding: 10px;
   }
   .button {
@@ -24,16 +26,16 @@
     color: #000;
     font-family: sans-serif;
     font-size: 18px;
-    text-transform: "uppercase";
+    text-transform: 'uppercase';
   }
-  .button:hover{
-    background-color: #D49E21;
+  .button:hover {
+    background-color: #d49e21;
     transition: 1s;
-    border: #D49E21;
+    border: #d49e21;
   }
-  .button a{
+  .button a {
     text-decoration: none;
-    color:#2F2A22;
+    color: #2f2a22;
   }
 }
 .accesories {

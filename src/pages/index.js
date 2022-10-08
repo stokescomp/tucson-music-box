@@ -34,12 +34,14 @@ export default function Home() {
 
   return (
     <div className={style.container}>
-      {/* <BasicSlider /> */}
+      <BasicSlider />
       <div>
         <h1 className={style.title}>Categories</h1>
         <p>Rediscover your childhood favorites!</p>
         <p>Book Viking Treasures</p>
-        <button className={style.button}><a href='/pages/shop/index.js'>Shop All</a></button>
+        <button className={style.button}>
+          <a href='/pages/shop/index.js'>Shop All</a>
+        </button>
       </div>
       <Categories />
       <div className={style.accesories}>
@@ -52,7 +54,9 @@ export default function Home() {
             new home accent or gift for any loved one!
           </p>
         </div>
-        <button className={style.button}><a href='/pages/shop/index.js'>Shop All</a></button>
+        <button className={style.button}>
+          <a href='/pages/shop/index.js'>Shop All</a>
+        </button>
       </div>
       <MyCarousel />
       <div className={style.contact}>
@@ -62,10 +66,9 @@ export default function Home() {
           Please reach out! We will respond to you within 2-3 business days.
         </p>
 
-        <button><a href='http://localhost:3000/contact'>Contact Us</a></button>
-
-
-
+        <button>
+          <a href='http://localhost:3000/contact'>Contact Us</a>
+        </button>
       </div>
       <br></br>
       <footer />
