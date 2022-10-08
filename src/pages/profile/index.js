@@ -30,7 +30,10 @@ function Profile() {
 
   const logout = async () => {
     router.push("/");
+
     await signOut(firebaseAuth);
+    const data = null;
+    dispatch(addUserInfo(null));
   };
 
   return (

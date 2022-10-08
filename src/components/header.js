@@ -12,7 +12,8 @@ import { fetchUserInfo } from "../slices/userSlice";
 import AdbIcon from "@mui/icons-material/Adb";
 import DiamondIcon from "@mui/icons-material/Diamond";
 
-let pages = ["Products"];
+let pages;
+const pagesLoggedOut = ["Products"];
 const pagesLoggedIn = ["Products", "My Orders"];
 
 export default function ButtonAppBar() {
@@ -20,6 +21,8 @@ export default function ButtonAppBar() {
   console.log(userInfo);
   if (userInfo) {
     pages = pagesLoggedIn;
+  } else {
+    pages = pagesLoggedOut;
   }
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
