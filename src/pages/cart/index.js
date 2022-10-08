@@ -43,7 +43,9 @@ function Index() {
             <span>Pending</span>
           </div>
 
-          <button className={styles.cart__btn}>Continue to Checkout</button>
+          <button role='link' className={styles.cart__btn}>
+            Continue to Checkout
+          </button>
         </div>
       </div>
     </div>

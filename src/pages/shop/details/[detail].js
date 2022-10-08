@@ -10,8 +10,6 @@ const ProductDetail = () => {
   const router = useRouter();
   const { detail } = router.query;
 
-  console.log(productInfo);
-
   useEffect(() => {
     const getProduct = async (id) => {
       const productSnapshot = await getDoc(doc(firestore, 'products', id));

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "tucson-music-box-57dd0",
+  "private_key_id": "1cb7204ee78c6012f810b39eca6b270b61608498",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCnnGi+T6S1DE5u\nLiL7OHDmtlO4+EMVMRK66EH9z5IH50M7zxsSjtEdczidb5TXsGH1tIQyEVRjkYZc\nCq3/sm3+mKuiOjm9nodl6uslEfaVI1n+XemtbXUb1oKtTZsvUz3WrcdSNR/S3EWR\n4/SwA34TlstSOVHrDiG3ycWG8mkK3zC7M8ihfPVwX5wHBfzmAYvnTjwqanEX2uZ6\nJRSHpy08QRXAUvI3YAoIZs6b8w0/nJ7f5CKM/Z9BNj3eJV/lcGtF6DkFjXFGypH/\nPRAwDjyCv09ksJM2I7lZ23IqXEdxlZmqV7xp3qrrjOHPAdshPLwh11R/ywe2FBzh\nbRBrYHQbAgMBAAECggEAOqxEeFZN7Hi93dD1uuZzkzfBEA+MABeZHGegbjZiwrSA\ncyfZLMJkzn/ekjIUsvpSGF5UJmitl1tCYub0KP2vhn+wGU5zlv6vHAzDusrSfDuP\nTb1XRzf5VkDdpsfzanojvApCK3NgTAKCsgLPzWuzjyzqyMI6/GMKh5kwtcAW6FBO\nZW+mLBWgSIWlAY4IMaxbcBoYIw9hnwBQbzq9xAkxbiesGU7kdPJzfspvQxmmiAvb\nmmXfytmCLBP05AzdDRos2uGJ/l7A+UUfqvBm8I99DIoIEqM9ZEV0bMIE0mADTx4T\nyRdn15TcGIZ/t+ZO51xC4cl8lPfUvut1u06qsHXJoQKBgQDhdrHoXTDL11v3+7iU\nRwdqot5Fntua41IDBWt7g1DlHjVQQB93c7ZStmDCOByV/cJSONx9v/2HO9/u9SWn\nS26wlWEcCxgJbHF8QgVrZulz6FGTYbsfC9iRY5f+YNW1owD33LS1jSKS4FwemoQ3\ntxLQobY56I5lHCVKfac9rZV0YQKBgQC+T9aujTj+PQy0/2xjazA84VovGKfJLEtu\nma/FvnSVd2YpIH30w/RAhsnztj2zPq3llja57ANQGqYnz0CvxQ9+f4752fYc+4nu\n7wNG1w3P3Jro3jy6+purnH88Ga5o+bMUeCnqUt7yTk3bPgUlyt09Sdwgifbj4hbO\nybzRbcX5+wKBgQDK5wnWhr9aQvamZmfHMWDwS6Bi4ULa0kbFJ0SCRDwx5YyvKvXm\nh0EGkNDlGKBJL7SIUFnF5VkhMfYmU4JOWylDSzu4hBdeq7Q50iSUcmoYAHQhgatn\nlj6RISLxL25EZ2yAo6QRWvFJYxYkCISCq4QIM/ANj0dOoRTCQ/CVJjlBIQKBgAak\nJJq8xONiYAIk87RYdjt5pbsFAj3r9MnsRQ0Cg3D/1KnUv3B+MhTaX0vI7UhHBKyB\nXHGKgecWtvumqNw5ZTwF2Yhwib0jLgIPhy6+rHW3fhRoRPhFbI9Fi88eGk8Bf7VU\nKCpMMAmGoALpnCZgeO39mNft2JbFOgSHV7Z7PTBnAoGBAN4XTZeThgjw7F8Ulvn9\n/Eq5VeHyq2zOuj+8v7OMdfi2tyTqTsoS8k1BgqEEPQBnKiP3vvQ8nAP1AF8bAVyB\nZsFYJffpJ1szK1DNXQ1c3KEFOXnUH+oXndcb3aLsM/8AuGlHyUYwoMmoPk/Op9Gu\npIsokPnJ1svV+qQNJ17TdXoD\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-k5iqz@tucson-music-box-57dd0.iam.gserviceaccount.com",
+  "client_id": "112143253845467527132",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-k5iqz%40tucson-music-box-57dd0.iam.gserviceaccount.com"
+}
