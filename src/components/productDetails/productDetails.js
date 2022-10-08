@@ -16,7 +16,8 @@ function ProductDetails({
   id,
 }) {
   const dispatch = useDispatch();
-  const [open, setOpen] = useState(false);
+  const [openSuccess, setOpenSuccess] = useState(false);
+  const [openFailure, setOpenFailure] = useState(false);
 
   const addToCart = () => {
     const product = {
@@ -29,8 +30,12 @@ function ProductDetails({
       id,
     };
 
-    dispatch(addToBasket(product));
-    setOpen(true);
+    try {
+      dispatch(addToBasket(product));
+      setOpenSuccess(true);
+    } catch (error) {
+      setOpenFailure(true);
+    }
   };
 
   const handleClose = (event, reason) => {
@@ -38,7 +43,8 @@ function ProductDetails({
       return;
     }
 
-    setOpen(false);
+    setOpenSuccess(false);
+    setOpenFailure(false);
   };
 
   return (
@@ -55,9 +61,23 @@ function ProductDetails({
         <button onClick={addToCart}>Add to cart</button>
       </div>
 
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar
+        open={openSuccess}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
         <Alert onClose={handleClose} severity='success' sx={{ width: '100%' }}>
           Successfully added to cart!
+        </Alert>
+      </Snackbar>
+
+      <Snackbar
+        open={openFailure}
+        autoHideDuration={3000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity='error' sx={{ width: '100%' }}>
+          Something went wrong. Please try again
         </Alert>
       </Snackbar>
     </div>
