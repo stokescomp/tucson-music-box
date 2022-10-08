@@ -1,20 +1,21 @@
+import Link from 'next/link';
+import style from './comps.module.scss';
+import React from 'react';
+import { useState } from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { Button } from '@mui/material';
+import { useSelector } from 'react-redux';
+import AdbIcon from '@mui/icons-material/Adb';
+import DiamondIcon from '@mui/icons-material/Diamond';
+import { useRouter } from 'next/router';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
 
-import Link from "next/link";
-import React from "react";
-import { useState } from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import { Button } from "@mui/material";
-import { useSelector } from "react-redux";
-import { fetchUserInfo } from "../slices/userSlice";
-import AdbIcon from "@mui/icons-material/Adb";
-import DiamondIcon from "@mui/icons-material/Diamond";
-import { useRouter } from "next/router";
-import style from './comps.module.scss'
-
+import { selectProducts } from '../slices/basketSlice';
 
 let pages;
 const productsLink = <div className={style.navcontainer}>
@@ -51,26 +52,29 @@ const pagesLoggedOut = [productsLink];
 const pagesLoggedIn = [productsLink, 'My Orders'];
 
 export default function ButtonAppBar() {
-  const userInfo = useSelector(fetchUserInfo);
-  console.log(userInfo);
-  if (userInfo) {
+  const router = useRouter();
+  const products = useSelector(selectProducts);
+
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+
+  if (true) {
     pages = pagesLoggedIn;
   } else {
     pages = pagesLoggedOut;
   }
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-  const router = useRouter();
+
   const handleCloseNavMenu = (e) => {
-    if (e.target.textContent == "Products") {
-      router.push("/shop");
+    if (e.target.textContent == 'Products') {
+      router.push('/shop');
     }
     setAnchorElNav(null);
   };
@@ -80,7 +84,6 @@ export default function ButtonAppBar() {
   };
 
   return (
-    <div>
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
         <Toolbar className={style.header}>
@@ -97,8 +100,15 @@ export default function ButtonAppBar() {
                 <DiamondIcon />
               </Button>
             </Link>
+
+            <Link href='/contact'>
+              <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                Contact
+              </Button>
+            </Link>
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+
+          <Box sx={{ flexGrow: 1, display: { md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -109,9 +119,9 @@ export default function ButtonAppBar() {
               </Button>
             ))}
           </Box>
+
         </Toolbar>
       </AppBar>
     </Box>
-    </div>
   );
 }

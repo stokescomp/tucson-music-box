@@ -4,6 +4,12 @@
   gap: 10px;
 }
 
+.modal {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
 @media screen and (min-width: 600px) {
   .shop__container {
     display: grid;
@@ -16,6 +22,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 30px;
+    max-width: 500px;
   }
 
   .shop__products div {
@@ -26,6 +33,11 @@
 @media screen and (min-width: 900px) {
   .shop__container {
     grid-template-columns: 1fr 3fr;
+  }
+
+  .shop__products {
+    justify-self: center;
+    max-width: 800px;
   }
 
   .shop__products div {

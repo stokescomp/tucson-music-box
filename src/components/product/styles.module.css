@@ -60,25 +60,21 @@
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    /* transition: all 0.2 ease-in-out !important; */
   }
 
-  .product__info svg {
+  .product__edit {
     color: rgb(0, 139, 0);
   }
 
-  .product__info svg:last-child {
+  .product__delete {
     color: rgb(176, 0, 32);
   }
 
-  .product__info svg:hover {
+  .product__edit:hover {
     background-color: rgba(0, 139, 0, 0.3);
   }
 
-  .product__info svg:last-child:hover {
+  .product__delete:hover {
     background-color: rgba(176, 0, 32, 0.3);
   }
 }
-
-/* B00020 */
-/* # */
