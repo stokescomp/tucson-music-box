@@ -16,18 +16,20 @@ class MyCarousel extends Component {
 
   static get CARD_STYLE() {
     return {
-      height: "450px",
-      width: "300px",
-      paddingTop: "80px",
-      textAlign: "center",
-      background: "#eee",
-      color: "#000",
-      fontFamily: "sans-serif",
-      fontSize: "14px",
-      textTransform: "uppercase",
-      borderRadius: "3px",
-      margin: "0 200px",
-      boxSizing: "border-box",
+
+      height: '550px',
+      width: '350px',
+      paddingTop: '80px',
+      textAlign: 'center',
+      background: '#eee',
+      color: '#000',
+      fontFamily: 'sans-serif',
+      fontSize: '14px',
+      textTransform: 'uppercase',
+      borderRadius: '3px',
+      margin: '0 200px',
+      boxSizing: 'border-box',
+
     };
   }
 
