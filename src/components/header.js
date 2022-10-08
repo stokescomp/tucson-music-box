@@ -80,7 +80,7 @@ export default function ButtonAppBar() {
               </Link>
 
               <Link
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, color: "#F8F6F1", display: "block" }}
                 href="/shop"
               >
                 <Button className={style.child}>Shop</Button>
