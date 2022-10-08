@@ -1,12 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Global } from '@emotion/react';
 import { styled } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 import { grey } from '@mui/material/colors';
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import Skeleton from '@mui/material/Skeleton';
 import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Checkbox from '@mui/material/Checkbox';
@@ -25,18 +21,8 @@ const Root = styled('div')(({ theme }) => ({
 }));
 
 const StyledBox = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'light' ? '#354ace' : grey[800],
+  backgroundColor: theme.palette.mode === 'light' ? 'fff' : grey[800],
 }));
-
-// const Puller = styled(Box)(({ theme }) => ({
-//   width: 30,
-//   height: 6,
-//   backgroundColor: theme.palette.mode === 'light' ? grey[300] : grey[900],
-//   borderRadius: 3,
-//   position: 'absolute',
-//   top: 4,
-//   left: 'calc(50% - 15px)',
-// }));
 
 function FilterDrawer(props) {
   const { window } = props;
@@ -46,13 +32,12 @@ function FilterDrawer(props) {
     setOpen(newOpen);
   };
 
-  // This is used only for the example
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Root className={styles.filterDrawer__toggler}>
-      <Button onClick={toggleDrawer(true)}>Categories</Button>
+      <button onClick={toggleDrawer(true)}>Filters</button>
       <SwipeableDrawer
         container={container}
         anchor='bottom'
@@ -77,7 +62,7 @@ function FilterDrawer(props) {
           }}
         >
           <Typography sx={{ p: 2, color: 'text.secondary' }}>
-            Filters
+            Categories
           </Typography>
         </StyledBox>
         <StyledBox
@@ -89,12 +74,12 @@ function FilterDrawer(props) {
           }}
         >
           <FormGroup className={styles.filterDrawer__filtersContainer}>
-            <FormControlLabel control={<Checkbox />} label='Label' />
-            <FormControlLabel control={<Checkbox />} label='Label' />
-            <FormControlLabel control={<Checkbox />} label='Label' />
-            <FormControlLabel control={<Checkbox />} label='Label' />
-            <FormControlLabel control={<Checkbox />} label='Label' />
-            <FormControlLabel control={<Checkbox />} label='Label' />
+            <FormControlLabel control={<Checkbox />} label='Gems and Min' />
+            <FormControlLabel control={<Checkbox />} label='Fossils & Spec' />
+            <FormControlLabel control={<Checkbox />} label='Lamps & Tress' />
+            <FormControlLabel control={<Checkbox />} label='Keepsake Boxes' />
+            <FormControlLabel control={<Checkbox />} label='Accessories' />
+            <FormControlLabel control={<Checkbox />} label='Miscellaneous' />
           </FormGroup>
         </StyledBox>
       </SwipeableDrawer>
