@@ -1,19 +1,20 @@
+import Link from 'next/link';
+import React from 'react';
+import { useState } from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { Button } from '@mui/material';
+import { useSelector } from 'react-redux';
+import AdbIcon from '@mui/icons-material/Adb';
+import DiamondIcon from '@mui/icons-material/Diamond';
+import { useRouter } from 'next/router';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import Badge from '@mui/material/Badge';
 
-import Link from "next/link";
-import React from "react";
-import { useState } from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import { Button } from "@mui/material";
-import { useSelector } from "react-redux";
-import { fetchUserInfo } from "../slices/userSlice";
-import AdbIcon from "@mui/icons-material/Adb";
-import DiamondIcon from "@mui/icons-material/Diamond";
-import { useRouter } from "next/router";
-
+import { fetchUserInfo } from '../slices/userSlice';
 
 let pages;
 const productsLink = <Link href='/shop'>Products</Link>;
@@ -40,8 +41,8 @@ export default function ButtonAppBar() {
   };
   const router = useRouter();
   const handleCloseNavMenu = (e) => {
-    if (e.target.textContent == "Products") {
-      router.push("/shop");
+    if (e.target.textContent == 'Products') {
+      router.push('/shop');
     }
     setAnchorElNav(null);
   };
@@ -67,8 +68,8 @@ export default function ButtonAppBar() {
                 <DiamondIcon />
               </Button>
             </Link>
-            <Link href="../pages/contact/contact.js">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
+            <Link href='../pages/contact/contact.js'>
+              <Button sx={{ my: 2, color: 'white', display: 'block' }}>
                 <h2>Contact</h2>
               </Button>
             </Link>
@@ -88,6 +89,12 @@ export default function ButtonAppBar() {
 
           <Link href='/profile'>
             <Button color='inherit'>Login</Button>
+          </Link>
+
+          <Link href='/cart'>
+            <Badge badgeContent={3} color='secondary'>
+              <ShoppingCartIcon />
+            </Badge>
           </Link>
         </Toolbar>
       </AppBar>
