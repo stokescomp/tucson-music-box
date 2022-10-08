@@ -6,6 +6,7 @@ export default function Contact() {
       <div className={contact.maincontainer}>
         <div className={contact.wordscontainer}>
           <h1 className={contact.title}>Contact Us!</h1>
+          <hr></hr>
           <p>We'd love to hear any feedback or questions you have for us.</p>
           <p>
             Location: Book Viking 155 W. Main St. Suite #10 Rexburg ID 83440
@@ -39,7 +40,13 @@ export default function Contact() {
             <br></br>
             <input type="text" name="message"></input>
             <br></br>
-            <input type="submit" value="Submit"></input>
+            <label for="submit"></label>
+            <br></br>
+            <input
+              className={contact.submit}
+              type="submit"
+              value="Submit"
+            ></input>
           </form>
         </div>
       </div>

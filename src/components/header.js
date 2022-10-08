@@ -49,46 +49,48 @@ export default function ButtonAppBar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          ></IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link href="/">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
-                <DiamondIcon />
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button sx={{ my: 2, color: "white", display: "block" }}>
-                Contact
-              </Button>
-            </Link>
-          </Typography>
+    <div>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar className={style.header}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            ></IconButton>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              <Link href="/">
+                <Button sx={{ my: 2, color: "white", display: "block" }}>
+                  <DiamondIcon />
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button sx={{ my: 2, color: "white", display: "block" }}>
+                  Contact
+                </Button>
+              </Link>
+            </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
+            <Box sx={{ flexGrow: 1, display: { md: "flex" } }}>
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              ))}
+            </Box>
 
-          <Link href="/profile">
-            <Button color="inherit">Login</Button>
-          </Link>
-        </Toolbar>
-      </AppBar>
-    </Box>
+            <Link href="/profile">
+              <Button color="inherit">Login</Button>
+            </Link>
+          </Toolbar>
+        </AppBar>
+      </Box>
+    </div>
   );
 }

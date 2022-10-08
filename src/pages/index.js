@@ -65,6 +65,7 @@ export default function Home() {
         </p>
         <button>Contact Us</button>
       </div>
+      <br></br>
       <footer />
     </div>
   );
