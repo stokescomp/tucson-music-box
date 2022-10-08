@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactCardCarousel from 'react-card-carousel';
 
-class MyCarousel extends Component {
+class Categories extends Component {
   static get CONTAINER_STYLE() {
     return {
       position: 'relative',
@@ -16,9 +16,8 @@ class MyCarousel extends Component {
 
   static get CARD_STYLE() {
     return {
-      height: '450px',
+      height: '300px',
       width: '300px',
-      paddingTop: '80px',
       textAlign: 'center',
       background: '#eee',
       color: '#000',
@@ -30,24 +29,27 @@ class MyCarousel extends Component {
       boxSizing: 'border-box',
     };
   }
+  static get IMAGE() {
+    return {
+      width: '300px',
+    };
+  }
 
   render() {
     return (
-      <div style={MyCarousel.CONTAINER_STYLE}>
+      <div style={Categories.CONTAINER_STYLE}>
         <ReactCardCarousel
           autoplay={false}
           autoplay_speed={2500}
           spread={'wide'}
           disable_box_shadow={true}
         >
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={Categories.CARD_STYLE}><img style={Categories.IMAGE} src='/images/img.png'></img><h2>Rocks</h2></div>
+          <div style={Categories.CARD_STYLE}><img style={Categories.IMAGE} src='/images/img.png'/><h2>Crowns</h2></div>
+          <div style={Categories.CARD_STYLE}><img style={Categories.IMAGE} src='/images/img.png'/><h2>Gems</h2></div>
         </ReactCardCarousel>
       </div>
     );
   }
 }
-export default MyCarousel;
+export default Categories;
