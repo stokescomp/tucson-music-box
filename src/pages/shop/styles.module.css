@@ -1,5 +1,7 @@
-.shop__container {
-  border: 1px solid red;
+.shop__products {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
 }
 
 @media screen and (min-width: 600px) {
@@ -10,14 +12,23 @@
 
   .shop__products {
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 30px;
+  }
+
+  .shop__products div {
+    max-width: 200px;
   }
 }
 
 @media screen and (min-width: 900px) {
   .shop__container {
     grid-template-columns: 1fr 3fr;
+  }
+
+  .shop__products div {
+    max-width: 230px;
   }
 }

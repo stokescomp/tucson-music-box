@@ -1,18 +1,21 @@
 import Image from 'next/image';
 import React from 'react';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import styles from './styles.module.css';
 
 function Product() {
   return (
     <div className={styles.product}>
-      <Image
-        src='/images/default.jpg'
-        alt='Default'
-        width={250}
-        height={250}
-        objectFit='cover'
-      />
+      <img src='/images/default.jpg' alt='Default' />
+
+      <div className={styles.product__info}>
+        <h4>Blue Gem</h4>
+        <span>$40</span>
+        <EditIcon />
+        <DeleteIcon />
+      </div>
     </div>
   );
 }
