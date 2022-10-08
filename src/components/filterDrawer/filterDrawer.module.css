@@ -4,7 +4,19 @@
 }
 
 .filterDrawer__toggler {
-  width: fit-content;
+  width: 100px;
+  margin: 20px 0;
+}
+
+.filterDrawer__toggler button {
+  padding: 15px 0;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  outline-width: none;
+  cursor: pointer;
+  width: 100%;
 }
 
 .filterDrawer__filtersContainer {
