@@ -1,24 +1,24 @@
-import Index from '../components/categories-carousel';
+
 
 import BasicSlider from '../components/hero';
-
 import MyCarousel from '../components/accesories/index.js';
+import Categories from '../components/categories-carousel/categories';
+import style from './index.module.sass'
+
 
 export default function Home() {
   return (
     <div>
       <BasicSlider />
-      <Index />
-
       <div>
-        <h1>Categories</h1>
+        <h1 className={style.title}>Categories</h1>
         <span>Rediscover your childhood</span>
         <span>Book Viking Treasures</span>
         <button>Shop All</button>
       </div>
-      <Index />
+      <Categories/>
       <div>
-        <h1>Accesories</h1>
+        <h1 className={style.title}>Accesories</h1>
         <div>
           <p>
             Gems, minerals, rose quartz, jewelry, and butterfly specimens fill
@@ -29,6 +29,9 @@ export default function Home() {
         </div>
       </div>
       <MyCarousel />
+      <div>
+        <h1 className={style.title}>Contact Us</h1>
+      </div>
     </div>
   );
 }

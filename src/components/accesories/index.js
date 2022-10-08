@@ -40,11 +40,11 @@ class MyCarousel extends Component {
           spread={"wide"}
           disable_box_shadow={true}
         >
-          <div style={MyCarousel.CARD_STYLE}>First Card</div>
-          <div style={MyCarousel.CARD_STYLE}>Second Card</div>
-          <div style={MyCarousel.CARD_STYLE}>Third Card</div>
-          <div style={MyCarousel.CARD_STYLE}>Fourth Card</div>
-          <div style={MyCarousel.CARD_STYLE}>Fifth Card</div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
         </ReactCardCarousel>
       </div>
     );
