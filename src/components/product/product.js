@@ -1,13 +1,14 @@
+
 import Image from 'next/image';
 import React from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-import styles from './styles.module.css';
 
-function Product() {
+function Product(props) {
   return (
     <div className={styles.product}>
+
       <img src='/images/default.jpg' alt='Default' />
 
       <div className={styles.product__info}>

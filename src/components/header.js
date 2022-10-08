@@ -1,16 +1,19 @@
-import Link from 'next/link';
-import React from 'react';
-import { useState } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { Button } from '@mui/material';
-import { useSelector } from 'react-redux';
-import { fetchUserInfo } from '../slices/userSlice';
-import AdbIcon from '@mui/icons-material/Adb';
-import DiamondIcon from '@mui/icons-material/Diamond';
+
+import Link from "next/link";
+import React from "react";
+import { useState } from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import { Button } from "@mui/material";
+import { useSelector } from "react-redux";
+import { fetchUserInfo } from "../slices/userSlice";
+import AdbIcon from "@mui/icons-material/Adb";
+import DiamondIcon from "@mui/icons-material/Diamond";
+import { useRouter } from "next/router";
+
 
 let pages;
 const productsLink = <Link href='/shop'>Products</Link>;
@@ -35,8 +38,11 @@ export default function ButtonAppBar() {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
-  const handleCloseNavMenu = () => {
+  const router = useRouter();
+  const handleCloseNavMenu = (e) => {
+    if (e.target.textContent == "Products") {
+      router.push("/shop");
+    }
     setAnchorElNav(null);
   };
 
