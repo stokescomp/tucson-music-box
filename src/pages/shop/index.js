@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import FilterDrawer from '../../components/filterDrawer/filterDrawer';
 import Filter from '../../components/filter/filter';
 import styles from './styles.module.css';
+import Product from '../../components/product/product';
 
 function Index() {
   const [screenSize, setScreenSize] = useState(0);
@@ -25,13 +26,13 @@ function Index() {
 
       <div className={styles.shop__container}>
         {screenSize <= 600 ? <FilterDrawer /> : <Filter />}
-        <div>
-          <p>Product</p>
-          <p>Product</p>
-          <p>Product</p>
-          <p>Product</p>
-          <p>Product</p>
-          <p>Product</p>
+        <div className={styles.shop__products}>
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
+          <Product />
         </div>
       </div>
     </>

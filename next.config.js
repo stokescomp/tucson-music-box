@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const withTM = require("next-transpile-modules")(["hero-slider"]);
+const withTM = require('next-transpile-modules')(['hero-slider']);
 
 const nextConfig = {
   reactStrictMode: true,
@@ -7,3 +7,9 @@ const nextConfig = {
 };
 
 module.exports = withTM({});
+
+// module.exports += {
+//   images: {
+//     domains: ['via.placeholder.com'],
+//   },
+// };
