@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import basketReducer from '../slices/basketSlice';
-import isLoggedInReducer from '../slices/isLoggedIn';
+import userReducer from '../slices/userSlice';
 
 export const store = configureStore({
   reducer: {
     basket: basketReducer,
-    isLoggedIn: isLoggedInReducer,
+    user: userReducer,
   },
 });
