@@ -1,11 +1,7 @@
-
-
-import BasicSlider from '../components/hero';
-import MyCarousel from '../components/accesories/index.js';
-import Categories from '../components/categories-carousel/categories';
-import style from './index.module.scss'
-
-
+import BasicSlider from "../components/hero";
+import MyCarousel from "../components/accesories/index.js";
+import Categories from "../components/categories-carousel/categories";
+import style from "./index.module.scss";
 
 export default function Home() {
   return (
@@ -18,7 +14,7 @@ export default function Home() {
         <p>Book Viking Treasures</p>
         <button>Shop All</button>
       </div>
-      <Categories/>
+      <Categories />
       <div className={style.accesories}>
         <h1 className={style.title}>Accesories</h1>
         <div>
@@ -36,10 +32,12 @@ export default function Home() {
         <h1 className={style.title}>Contact Us</h1>
         <p>Have questions?</p>
         <br></br>
-        <p>Please reach out! We will respond to you within 2-3 business days.</p>
+        <p>
+          Please reach out! We will respond to you within 2-3 business days.
+        </p>
         <button>Contact Us</button>
       </div>
-      <footer/>
+      <footer />
     </div>
   );
 }

@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import { fetchUserInfo } from "../slices/userSlice";
 import AdbIcon from "@mui/icons-material/Adb";
 import DiamondIcon from "@mui/icons-material/Diamond";
+import { useRouter } from "next/router";
 
 let pages;
 const pagesLoggedOut = ["Products"];
@@ -33,8 +34,11 @@ export default function ButtonAppBar() {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
-  const handleCloseNavMenu = () => {
+  const router = useRouter();
+  const handleCloseNavMenu = (e) => {
+    if (e.target.textContent == "Products") {
+      router.push("/shop");
+    }
     setAnchorElNav(null);
   };
 
