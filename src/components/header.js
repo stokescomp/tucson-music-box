@@ -1,4 +1,5 @@
 import Link from "next/link";
+import style from "./comps.module.scss";
 import React from "react";
 import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
