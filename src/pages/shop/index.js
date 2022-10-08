@@ -1,17 +1,23 @@
-import React, { useEffect, useState } from "react";
 
-import FilterDrawer from "../../components/filterDrawer/filterDrawer";
-import Filter from "../../components/filter/filter";
-import styles from "./styles.module.css";
-import Product from "../../components/product/product";
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+
+import FilterDrawer from '../../components/filterDrawer/filterDrawer';
+import Filter from '../../components/filter/filter';
+import styles from './styles.module.css';
+import Product from '../../components/product/product';
+import { fetchAllProducts } from '../../slices/productsSlice';
+
 
 function Index() {
   const [screenSize, setScreenSize] = useState(0);
-  console.log(screenSize);
+  const products = useSelector(fetchAllProducts);
 
   useEffect(() => {
-    window.addEventListener("resize", () => setScreenSize(window.innerWidth));
-    // setScreenSize(window.innerWidth);
+
+    window.addEventListener('load', setScreenSize(window.innerWidth));
+    window.addEventListener('resize', () => setScreenSize(window.innerWidth));
+
   }, []);
 
   return (
@@ -27,12 +33,11 @@ function Index() {
       <div className={styles.shop__container}>
         {screenSize <= 600 ? <FilterDrawer /> : <Filter />}
         <div className={styles.shop__products}>
-          <Product id="1" />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+
+          {products.map((product, i) => (
+            <Product key={i} {...product} />
+          ))}
+
         </div>
       </div>
     </>

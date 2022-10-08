@@ -1,9 +1,34 @@
-import BasicSlider from "../components/hero";
-import MyCarousel from "../components/accesories/index.js";
-import Categories from "../components/categories-carousel/categories";
-import style from "./index.module.scss";
+
+import { useEffect, useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { useDispatch } from 'react-redux';
+
+import BasicSlider from '../components/hero';
+import MyCarousel from '../components/accesories/index.js';
+import Categories from '../components/categories-carousel/categories';
+import style from './index.module.scss';
+import { firestore } from '../../firebase';
+import { fetchProducts } from '../slices/productsSlice';
 
 export default function Home() {
+  const [products, setProducts] = useState(null);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const productsSnapshot = await getDocs(collection(firestore, 'products'));
+      const productsList = productsSnapshot.docs.map((doc) => doc.data());
+      setProducts(productsList);
+    };
+
+    getProducts();
+  }, []);
+
+  useEffect(() => {
+    dispatch(fetchProducts(products));
+  });
+
+
   return (
     <div className={style.container}>
       <BasicSlider />
