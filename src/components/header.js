@@ -15,6 +15,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
 
 import { fetchUserInfo } from '../slices/userSlice';
+import { selectProducts } from '../slices/basketSlice';
 
 let pages;
 const productsLink = <Link href='/shop'>Products</Link>;
@@ -23,23 +24,27 @@ const pagesLoggedOut = [productsLink];
 const pagesLoggedIn = [productsLink, 'My Orders'];
 
 export default function ButtonAppBar() {
+  const router = useRouter();
+  const products = useSelector(selectProducts);
   const userInfo = useSelector(fetchUserInfo);
-  console.log(userInfo);
+
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+
   if (userInfo) {
     pages = pagesLoggedIn;
   } else {
     pages = pagesLoggedOut;
   }
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-  const router = useRouter();
+
   const handleCloseNavMenu = (e) => {
     if (e.target.textContent == 'Products') {
       router.push('/shop');
@@ -92,7 +97,11 @@ export default function ButtonAppBar() {
           </Link>
 
           <Link href='/cart'>
-            <Badge badgeContent={3} color='secondary'>
+            <Badge
+              badgeContent={products.length}
+              showZero={true}
+              color='secondary'
+            >
               <ShoppingCartIcon />
             </Badge>
           </Link>

@@ -44,6 +44,7 @@
   color: white;
   border: none;
   outline-width: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {
