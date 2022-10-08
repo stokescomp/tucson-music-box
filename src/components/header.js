@@ -14,45 +14,12 @@ import DiamondIcon from '@mui/icons-material/Diamond';
 import { useRouter } from 'next/router';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
+import { flexbox } from '@mui/system';
 
 import { selectProducts } from '../slices/basketSlice';
 
 let pages;
-const productsLink = 
-<div className={style.navcontainer}>
-  <Link href='/shop'><a className={style.links}> Gems and Minerals</a></Link>
-  <br></br>
-            <Link href='/shop'>
-            <a className={style.links}>
-                Fossils and Specimen
-              </a>
-            </Link>
-            <br></br>
-            <Link href='/'>
-            <a className={style.links}>
-                Lamps and Trees
-              </a>
-            </Link>
-            <br></br>
-            
-            <Link href='/'>
-              <a className={style.links}>
-                Keepsake Boxes
-              </a>
-            </Link>
-            <br></br>
-            
-            <Link href='/'>
-              <a className={style.links}>
-                Accessories 
-              </a>
-            </Link>
-            <br></br>
-            
-          <Link href='/profile'>
-            <a>Login </a>
-          </Link>
-          </div>;
+const productsLink = <div></div>;
 
 const pagesLoggedOut = [productsLink];
 const pagesLoggedIn = [productsLink, 'My Orders'];
@@ -101,31 +68,33 @@ export default function ButtonAppBar() {
             sx={{ mr: 2 }}
           ></IconButton>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+          <div className={style.navcontainer} >
             <Link href='/'>
               <Button sx={{ my: 2, color: 'white', display: 'block' }}>
                 <DiamondIcon />
               </Button>
             </Link>
-
+              <Link href='/profile'>
+                <Button className={style.child}>Login</Button>
+              </Link>
             <Link href='/contact'>
-              <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+              <Button className={style.child}>
                 Contact
               </Button>
             </Link>
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
             ))}
           </Box>
 
+            </div>
+          </Typography>
         </Toolbar>
       </AppBar>
     </Box>
