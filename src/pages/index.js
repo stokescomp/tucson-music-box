@@ -1,13 +1,18 @@
-
-import Link from 'next/link';
-
 import Index from "../components/categories-carousel";
+
+import BasicSlider from "../components/hero";
+
 import MyCarousel from "../components/accesories/index.js"
+
 
 
 export default function Home() {
   return (
     <div>
+
+      <BasicSlider />
+      <Index />
+
       <div>
         <h1 className={index.title}>Categories</h1>
         <span>Rediscover your childhood</span>
@@ -27,6 +32,7 @@ export default function Home() {
           </div>
         </div>
       <MyCarousel />
+
 
     </div>
   );
