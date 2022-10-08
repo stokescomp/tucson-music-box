@@ -1,0 +1,20 @@
+.filterDrawer {
+  display: none;
+  background-color: red;
+}
+
+.filterDrawer__toggler {
+  width: fit-content;
+}
+
+.filterDrawer__filtersContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 60px 0 14px;
+}
+
+.filterDrawer__checkBox {
+  padding-left: 0;
+}
