@@ -61,6 +61,23 @@
     border-radius: 50%;
     cursor: pointer;
   }
+  .product__info button {
+    display: inline;
+    grid-row: 1/-1;
+    align-self: center;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgb(0, 139, 0);
+    padding: 0;
+  }
+  .product__info button:hover {
+    background-color: rgba(0, 139, 0, 0.3);
+  }
+
+  .modal {
+    grid-row: 1/-1;
+  }
 
   .product__edit {
     color: rgb(0, 139, 0);
