@@ -25,8 +25,8 @@ function Product({
         <div className={styles.product__info}>
           <h4 className={styles.product__name}>{name}</h4>
           <span>${price}</span>
-          <EditIcon />
-          <DeleteIcon />
+          <EditIcon className={styles.product__edit} />
+          <DeleteIcon className={styles.product__delete} />
         </div>
       </div>
     </Link>
