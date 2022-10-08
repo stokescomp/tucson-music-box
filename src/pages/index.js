@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { useDispatch } from 'react-redux';
+
 import BasicSlider from '../components/hero';
 import MyCarousel from '../components/accessories/index.js';
 import Categories from '../components/categories-carousel/categories';
@@ -33,7 +34,7 @@ export default function Home() {
 
   return (
     <div className={style.container}>
-      <BasicSlider />
+      {/* <BasicSlider /> */}
       <div>
         <h1 className={style.title}>Categories</h1>
         <p>Rediscover your childhood favorites!</p>

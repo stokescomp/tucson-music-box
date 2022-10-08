@@ -1,18 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-import FilterDrawer from "../../components/filterDrawer/filterDrawer";
-import Filter from "../../components/filter/filter";
-import styles from "./styles.module.css";
-import Product from "../../components/product/product";
-import { fetchAllProducts } from "../../slices/productsSlice";
-import TransitionsModal from "../../components/modal/modal";
+import FilterDrawer from '../../components/filterDrawer/filterDrawer';
+import Filter from '../../components/filter/filter';
+import styles from './styles.module.css';
+import Product from '../../components/product/product';
+import { fetchAllProducts } from '../../slices/productsSlice';
+import TransitionsModal from '../../components/modal/modal';
 
 function Index() {
   const [screenSize, setScreenSize] = useState(0);
   let products = useSelector(fetchAllProducts);
 
   useEffect(() => {
+
     window.addEventListener("load", setScreenSize(window.innerWidth));
     window.addEventListener("resize", () => setScreenSize(window.innerWidth));
     filterProducts();
