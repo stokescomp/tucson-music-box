@@ -1,6 +1,6 @@
 import Header from "./header";
 import Footer from "./footer";
-import Hero from "./heroslider/heroSlider";
+import Hero from "./heroslider/hero";
 
 export default function Layout({ children }) {
   return (

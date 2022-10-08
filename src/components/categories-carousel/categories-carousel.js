@@ -1,15 +1,11 @@
 import * as React from "react";
-import layout from './layout.js'
+import layout from '../layout.js'
+import Index from "./index.js";
 
 
-// function carousel(){
-//     let slideIndex = 1;
-//     showSlides(slideIndex);
-
-// }
 
 
-export default function categoriesCarousel() {
+export default function categoriescarousel() {
     return (
       <>
         <div className={categoriesCarousel.title}>
@@ -31,8 +27,6 @@ export default function categoriesCarousel() {
                 <img src=""></img>
                 <h2>Rocks</h2>
             </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
       </>
     );
