@@ -14,9 +14,15 @@
     "@mui/icons-material": "^5.10.6",
     "@mui/material": "^5.10.8",
     "@reduxjs/toolkit": "^1.8.5",
+    "@stripe/stripe-js": "^1.38.1",
+    "axios": "^1.1.2",
+    "dotenv": "^16.0.3",
     "firebase": "^9.11.0",
+    "firebase-admin": "^11.1.0",
     "hero-slider": "^3.1.0",
+    "micro": "^9.4.1",
     "next": "12.3.1",
+    "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^9.0.0",
     "npm": "^8.19.2",
     "react": "18.2.0",
@@ -26,6 +32,7 @@
     "react-redux": "^8.0.4",
     "sass": "^1.55.0",
     "semantic-ui-css": "^2.5.0",
+    "stripe": "^10.12.0",
     "ua-parser-js": "^1.0.2"
   },
   "devDependencies": {

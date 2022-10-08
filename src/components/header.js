@@ -14,11 +14,12 @@ import DiamondIcon from '@mui/icons-material/Diamond';
 import { useRouter } from 'next/router';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
+import { flexbox } from '@mui/system';
 
 import { selectProducts } from '../slices/basketSlice';
 
 let pages;
-const productsLink = <Link href='/shop'>Products</Link>;
+const productsLink = <div></div>;
 
 const pagesLoggedOut = [productsLink];
 const pagesLoggedIn = [productsLink, 'My Orders'];
@@ -69,43 +70,30 @@ export default function ButtonAppBar() {
             sx={{ mr: 2 }}
           ></IconButton>
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-            <Link href='/'>
-              <Button sx={{ my: 2, color: 'white', display: 'block' }}>
-                <DiamondIcon />
-              </Button>
-            </Link>
-            <Link href='/contact'>
-              <Button sx={{ my: 2, color: 'white', display: 'block' }}>
-                Contact
-              </Button>
-            </Link>
-          </Typography>
+            <div className={style.navcontainer}>
+              <Link href='/'>
+                <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                  <DiamondIcon />
+                </Button>
+              </Link>
 
-          <Box sx={{ flexGrow: 1, display: { md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+              <Link href='/contact'>
+                <Button className={style.child}>Contact</Button>
+              </Link>
+
+              <Link
+                sx={{ my: 2, color: '#F8F6F1', display: 'block' }}
+                href='/shop'
               >
-                {page}
-              </Button>
-            ))}
-          </Box>
+                <Button className={style.child}>Shop</Button>
+              </Link>
+              <Box sx={{ flexGrow: 1, display: { md: 'flex' } }}></Box>
 
-          <Link href='/profile'>
-            <Button color='inherit'>Login</Button>
-          </Link>
-
-          <Link href='/cart'>
-            <Badge
-              badgeContent={products.length}
-              showZero={true}
-              color='secondary'
-            >
-              <ShoppingCartIcon />
-            </Badge>
-          </Link>
+              <Link href='/profile'>
+                <Button className={style.child}>Login</Button>
+              </Link>
+            </div>
+          </Typography>
         </Toolbar>
       </AppBar>
     </Box>

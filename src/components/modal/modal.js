@@ -17,6 +17,8 @@ import Checkbox from "@mui/material/Checkbox";
 import { firestore } from "../../../firebase"; // update with your path to firestore config
 import { collection, addDoc } from "firebase/firestore";
 import { Snackbar, Alert } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
+import { useRef, useEffect } from "react";
 
 const style = {
   position: "absolute",
@@ -34,16 +36,28 @@ const style = {
 //   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 // });
 
-export default function TransitionsModal() {
+export default function TransitionsModal(props) {
   const [toastOpen, setToastOpen] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [category, setCategory] = React.useState("");
-
+  const nameRef = useRef();
   const handleChange = (event) => {
     setCategory(event.target.value);
   };
+  let icon;
+  if (props.text == "edit") {
+    icon = <EditIcon />;
+  } else {
+    icon = props.text;
+  }
+  useEffect(() => {
+    if (props.name) {
+      console.log(nameRef);
+      //   nameRef.current.value = props.name;
+    }
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -70,7 +84,7 @@ export default function TransitionsModal() {
   };
 
   return (
-    <div>
+    <>
       <Snackbar
         open={toastOpen}
         autoHideDuration={6000}
@@ -81,10 +95,10 @@ export default function TransitionsModal() {
           severity="success"
           sx={{ width: "100%" }}
         >
-          Item added to product list.
+          {props.success}
         </Alert>
       </Snackbar>
-      <Button onClick={handleOpen}>Add Item</Button>
+      <Button onClick={handleOpen}>{icon}</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -100,12 +114,13 @@ export default function TransitionsModal() {
           <Box component="form" onSubmit={handleSubmit} noValidate sx={style}>
             <React.Fragment>
               <Typography variant="h6" gutterBottom>
-                Add New Item
+                {props.replace}
               </Typography>
               <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     required
+                    inputRef={nameRef}
                     id="name"
                     name="name"
                     label="Name"
@@ -208,6 +223,6 @@ export default function TransitionsModal() {
           </Box>
         </Fade>
       </Modal>
-    </div>
+    </>
   );
 }

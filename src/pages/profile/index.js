@@ -112,7 +112,6 @@ function Profile() {
     }
     setIsUpdate(!isUpdate);
   };
-  console.log(user?.uid);
 
   return (
     <div>

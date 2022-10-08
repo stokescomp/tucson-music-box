@@ -1,11 +1,12 @@
-import Image from 'next/image';
-import React from 'react';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Link from 'next/link';
+import Image from "next/image";
+import React, { useState } from "react";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Link from "next/link";
 
-import styles from './styles.module.css';
-
+import styles from "./styles.module.css";
+import TransitionsModal from "../modal/modal";
+import { Edit } from "@mui/icons-material";
 function Product({
   category,
   color,
@@ -17,19 +18,34 @@ function Product({
   quantity,
   id,
 }) {
-  return (
-    <Link href={`shop/details/${id}`}>
-      <div className={styles.product}>
-        <img src={imgUrl} alt={name} />
+  // const [edit, onEdit] = useState();
+  // const [del, onDelete] = useState();
 
-        <div className={styles.product__info}>
-          <h4 className={styles.product__name}>{name}</h4>
-          <span>${price}</span>
-          <EditIcon className={styles.product__edit} />
-          <DeleteIcon className={styles.product__delete} />
-        </div>
+  const edit = () => {};
+  return (
+    <div className={styles.product}>
+      <Link href={`shop/details/${id}`}>
+        <img src={imgUrl} alt={name} />
+      </Link>
+      <div className={styles.product__info}>
+        <h4 className={styles.product__name}>{name}</h4>
+        <span>${price}</span>
+        <TransitionsModal
+          replace={"Edit Fields"}
+          name={name}
+          description={description}
+          imgUrl={imgUrl}
+          category={category}
+          discount={discount}
+          quantity={quantity}
+          color={color}
+          className={styles.modal}
+          text="edit"
+        />
+
+        <DeleteIcon className={styles.product__delete} />
       </div>
-    </Link>
+    </div>
   );
 }
 
