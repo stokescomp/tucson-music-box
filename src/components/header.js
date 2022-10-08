@@ -69,13 +69,37 @@ export default function ButtonAppBar() {
                 <DiamondIcon />
               </Button>
             </Link>
+          </Typography>
+          <Link href="/">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Gems and Minerals |
+              </Button>
+          </Link>
+          <Link href="/">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Fossils and Specimen |
+              </Button>
+          </Link> 
+          <Link href="/">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Lamps and Trees |
+              </Button>
+          </Link>
+          <Link href="/contact">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Keepsake Boxes |
+              </Button>
+          </Link>
+          <Link href="/contact">
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Accesories |
+              </Button>
+          </Link>
             <Link href="/contact">
               <Button sx={{ my: 2, color: "white", display: "block" }}>
                 Contact
               </Button>
             </Link>
-          </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
