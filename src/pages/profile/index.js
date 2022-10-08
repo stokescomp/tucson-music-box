@@ -1,45 +1,42 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import React, { useEffect, useState } from 'react';
 
-import Login from "../login";
-import { firebaseAuth } from "/firebase";
-import { addUserInfo, fetchUserInfo } from "../../slices/userSlice";
-import { useRouter } from "next/router";
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+
+import SignInSide from '../signIn';
+import { firebaseAuth, firestore } from '/firebase';
+import { getDoc, doc, collection, setDoc } from 'firebase/firestore';
 
 function Profile() {
-  const router = useRouter();
-
   const [user, setUser] = useState({});
-  const userInfo = useSelector(fetchUserInfo);
-  const dispatch = useDispatch();
+
+  const userCollectionRef = collection(firestore, 'users');
 
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (currentUser) => {
       setUser(currentUser);
-      setData();
+      // Only set user info for redux when the uid is returned from user
+      user?.uid && initUserInfoToFB();
     });
   }, [firebaseAuth, user]);
 
-  const setData = () => {
-    const data = user ? { name: "jackson", userType: 1 } : null;
-    // const data = user;
-
-    dispatch(addUserInfo(data));
+  // The function init user default info when not initialized and dispatching it to redux
+  const initUserInfoToFB = async () => {
+    const data = JSON.parse(localStorage.getItem('user'));
+    if (!data) {
+      data = { userType: 3 };
+      localStorage.setItem('user', JSON.stringify(data));
+    }
+    await setDoc(doc(userCollectionRef, user.uid), data);
+    console.log(data);
   };
 
   const logout = async () => {
-    router.push("/");
-
     await signOut(firebaseAuth);
-    const data = null;
-    dispatch(addUserInfo(null));
   };
 
   return (
     <div>
-      <div>Your email is {user?.email}</div>
-      {userInfo ? <button onClick={logout}>Log Out</button> : <Login />}
+      {user ? <button onClick={logout}>Log Out</button> : <SignInSide />}
     </div>
   );
 }
