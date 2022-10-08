@@ -38,7 +38,7 @@ export default function Home() {
         <h1 className={style.title}>Categories</h1>
         <p>Rediscover your childhood favorites!</p>
         <p>Book Viking Treasures</p>
-        <button><a href='/pages/shop/index.js'>Shop All</a></button>
+        <button className={style.button}><a href='/pages/shop/index.js'>Shop All</a></button>
       </div>
       <Categories />
       <div className={style.accesories}>
@@ -51,7 +51,7 @@ export default function Home() {
             new home accent or gift for any loved one!
           </p>
         </div>
-        <button><a href='/pages/shop/index.js'>Shop All</a></button>
+        <button className={style.button}><a href='/pages/shop/index.js'>Shop All</a></button>
       </div>
       <MyCarousel />
       <div className={style.contact}>
@@ -60,7 +60,7 @@ export default function Home() {
         <p>
           Please reach out! We will respond to you within 2-3 business days.
         </p>
-        <button><a href='/contact'>Contact Us</a></button>
+        <button className={style.button}><a href='/contact'>Contact Us</a></button>
       </div>
       <br></br>
       <footer />

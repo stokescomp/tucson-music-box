@@ -37,8 +37,8 @@ export default function Contact() {
             <label className={contact.message} for="message">
               Message:
             </label>
-            <br></br>
-            <input type="text" name="message"></input>
+
+            <textarea rows = "7" cols = "55" name="message"></textarea>
             <br></br>
             <label for="submit"></label>
             <br></br>
