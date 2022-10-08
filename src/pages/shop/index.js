@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-import FilterDrawer from '../../components/filterDrawer/filterDrawer';
-import Filter from '../../components/filter/filter';
-import styles from './styles.module.css';
-import Product from '../../components/product/product';
-import { fetchAllProducts } from '../../slices/productsSlice';
+import FilterDrawer from "../../components/filterDrawer/filterDrawer";
+import Filter from "../../components/filter/filter";
+import styles from "./styles.module.css";
+import Product from "../../components/product/product";
+import { fetchAllProducts } from "../../slices/productsSlice";
+import TransitionsModal from "../../components/modal/modal";
 
 function Index() {
   const [screenSize, setScreenSize] = useState(0);
   const products = useSelector(fetchAllProducts);
-  console.log(products);
 
   useEffect(() => {
-    window.addEventListener('load', setScreenSize(window.innerWidth));
-    window.addEventListener('resize', () => setScreenSize(window.innerWidth));
+    window.addEventListener("load", setScreenSize(window.innerWidth));
+    window.addEventListener("resize", () => setScreenSize(window.innerWidth));
   }, []);
 
   return (
@@ -26,7 +26,9 @@ function Index() {
         home. Each different piece would make a great new home accent or gift
         for any loved one!
       </h3>
-
+      <div className={styles.modal}>
+        <TransitionsModal />
+      </div>
       <div className={styles.shop__container}>
         {screenSize <= 600 ? <FilterDrawer /> : <Filter />}
         <div className={styles.shop__products}>
