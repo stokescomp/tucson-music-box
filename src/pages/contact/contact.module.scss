@@ -1,0 +1,40 @@
+@font-face {
+    font-family: Aloevera;
+    src: url('../../../tucson-music-box/public/fonts/Aloevera-OVoWO.ttf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+h1{
+    font-family: Aloevera;
+    font-weight: bolder;
+    font-size:70px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  
+  }
+  
+  
+  @media screen and (max-width: 1200px) {
+    main {
+      padding: 30px 16px;
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    main {
+      padding: 30px 16px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    main {
+      padding: 30px 16px;
+    }
+    .wordscontainer{
+        width:100%;
+        padding: 20px;
+    }
+  }
+  
