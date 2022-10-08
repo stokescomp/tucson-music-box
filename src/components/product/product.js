@@ -1,11 +1,10 @@
-
 import Image from 'next/image';
 import React from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Link from 'next/link';
 
-
+import styles from './styles.module.css';
 
 function Product({
   category,
@@ -16,9 +15,10 @@ function Product({
   name,
   price,
   quantity,
+  id,
 }) {
   return (
-    <Link href={`shop/${name}`}>
+    <Link href={`shop/details/${id}`}>
       <div className={styles.product}>
         <img src={imgUrl} alt={name} />
 
