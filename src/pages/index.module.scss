@@ -18,7 +18,7 @@
     font-family: "Poppins", sans-serif;
     padding: 10px;
   }
-  button {
+  .button {
     border: black solid;
     padding: 10px 60px 10px 60px;
     color: #000;
@@ -26,17 +26,14 @@
     font-size: 18px;
     text-transform: "uppercase";
   }
-  button:hover{
-    background-color: #2F2A22;
-    color: #F8F6F1;
+  .button:hover{
+    background-color: #D49E21;
     transition: 1s;
+    border: #D49E21;
   }
-  a{
+  .button a{
     text-decoration: none;
     color:#2F2A22;
-  }
-  a:hover{
-    color: #F8F6F1;
   }
 }
 .accesories {
