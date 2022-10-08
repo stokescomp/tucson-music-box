@@ -1,9 +1,9 @@
-import categoriesCarousel from "../components/categories-carousel";
+import Hero from "../components/heroslider/heroSlider";
+
 export default function Home() {
   return (
     <div>
-      <h1>Hello</h1>
-      <categoriesCarousel/>
+      <Hero />
     </div>
   );
 }
