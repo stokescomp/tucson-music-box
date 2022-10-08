@@ -47,6 +47,8 @@ export default function ButtonAppBar() {
   const handleCloseNavMenu = (e) => {
     if (e.target.textContent == 'Products') {
       router.push('/shop');
+    } else if (e.target.textContent == 'My Orders') {
+      router.push('/orders');
     }
     setAnchorElNav(null);
   };

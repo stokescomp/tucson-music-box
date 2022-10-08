@@ -49,15 +49,14 @@ export default function SignInSide() {
 
   const [haveAccount, setHaveAccount] = useState(true);
 
-  const [firstName, setFirstname] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [name, setName] = useState('');
 
   const handleSignInSubmit = async (event) => {
     event.preventDefault();
     try {
       signInWithEmailAndPassword(firebaseAuth, signInEmail, signInPassword);
-      // const data = { firstName, lastName, userType: 3, signInEmail };
-      // localStorage.setItem('user', JSON.stringify(data));
+      setSignInEmail('');
+      setSignInPassword('');
     } catch (err) {
       alert(err.message);
     }
@@ -67,9 +66,12 @@ export default function SignInSide() {
     event.preventDefault();
     try {
       createUserWithEmailAndPassword(firebaseAuth, signUpEmail, signUpPassword);
-      const data = { firstName, lastName, userType: 3, signUpEmail };
+      const data = { name, signUpEmail };
       localStorage.setItem('user', JSON.stringify(data));
       console.log('Registration successful!');
+      setName('');
+      setSignUpEmail('');
+      setSignUpPassword('');
     } catch (err) {
       alert(err.message);
     }
@@ -209,27 +211,15 @@ export default function SignInSide() {
                 sx={{ mt: 3 }}
               >
                 <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      autoComplete='given-name'
-                      name='firstName'
-                      required
-                      fullWidth
-                      id='firstName'
-                      label='First Name'
-                      autoFocus
-                      onChange={(event) => setFirstname(event.target.value)}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid item xs={12} sm={12}>
                     <TextField
                       required
                       fullWidth
-                      id='lastName'
-                      label='Last Name'
-                      name='lastName'
-                      autoComplete='family-name'
-                      onChange={(event) => setLastName(event.target.value)}
+                      id='Name'
+                      label='Name'
+                      name='Name'
+                      autoComplete='name'
+                      onChange={(event) => setName(event.target.value)}
                     />
                   </Grid>
                   <Grid item xs={12}>
