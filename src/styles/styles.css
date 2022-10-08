@@ -1,6 +1,13 @@
+/*
+Style Specifics 
+fonts: Public Sans
+head-fonts: semi-bold Public Sans 
+*/
+
 * {
   margin: 0;
   padding: 0;
+
 }
 
 @media screen and (max-width: 1200px) {
@@ -9,13 +16,13 @@
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   main {
     padding: 30px 16px;
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 600px) {
   main {
     padding: 30px 16px;
   }

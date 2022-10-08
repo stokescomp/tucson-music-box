@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import Checkbox from '@mui/material/Checkbox';
 
-import styles from '../styles/filterDrawer.module.css';
+import styles from './filterDrawer.module.css';
 import { FormControlLabel, FormGroup } from '@mui/material';
 
 const drawerBleeding = -50;
