@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { useDispatch } from 'react-redux';
@@ -14,10 +13,15 @@ export default function Home() {
   const [products, setProducts] = useState(null);
   const dispatch = useDispatch();
 
+  console.log(products);
+
   useEffect(() => {
     const getProducts = async () => {
       const productsSnapshot = await getDocs(collection(firestore, 'products'));
-      const productsList = productsSnapshot.docs.map((doc) => doc.data());
+      const productsList = productsSnapshot.docs.map((doc) => {
+        return { ...doc.data(), id: doc.id };
+      });
+
       setProducts(productsList);
     };
 
@@ -27,7 +31,6 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchProducts(products));
   });
-
 
   return (
     <div className={style.container}>
