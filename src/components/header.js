@@ -9,12 +9,12 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
 import { useSelector } from 'react-redux';
-import { fetchUserInfo } from '../slices/userSlice';
 import AdbIcon from '@mui/icons-material/Adb';
 import DiamondIcon from '@mui/icons-material/Diamond';
 import { useRouter } from 'next/router';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
+
 import { selectProducts } from '../slices/basketSlice';
 
 let pages;
@@ -26,12 +26,11 @@ const pagesLoggedIn = [productsLink, 'My Orders'];
 export default function ButtonAppBar() {
   const router = useRouter();
   const products = useSelector(selectProducts);
-  const userInfo = useSelector(fetchUserInfo);
 
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
-  if (userInfo) {
+  if (true) {
     pages = pagesLoggedIn;
   } else {
     pages = pagesLoggedOut;
