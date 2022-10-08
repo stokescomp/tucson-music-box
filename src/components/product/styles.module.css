@@ -1,6 +1,74 @@
 .product {
-  width: 250px;
-  /* display: flex;
-  justify-content: center;
-  flex-wrap: wrap; */
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+.product img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+.product__info {
+  display: grid;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.product__info svg {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .product {
+    padding: 20px;
+  }
+
+  .product img {
+    height: 150px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .product__info {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .product__info span {
+    grid-row: 2;
+    grid-column: 1;
+  }
+
+  .product__info svg {
+    display: inline;
+    grid-row: 1/-1;
+    align-self: center;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    /* transition: all 0.2 ease-in-out !important; */
+  }
+
+  .product__info svg {
+    color: rgb(0, 139, 0);
+  }
+
+  .product__info svg:last-child {
+    color: rgb(176, 0, 32);
+  }
+
+  .product__info svg:hover {
+    background-color: rgba(0, 139, 0, 0.3);
+  }
+
+  .product__info svg:last-child:hover {
+    background-color: rgba(176, 0, 32, 0.3);
+  }
+}
+
+/* B00020 */
+/* # */
