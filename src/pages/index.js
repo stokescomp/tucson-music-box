@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
+import { useDispatch } from 'react-redux';
 
 import BasicSlider from '../components/hero';
 import MyCarousel from '../components/accesories/index.js';
 import Categories from '../components/categories-carousel/categories';
 import style from './index.module.scss';
 import { firestore } from '../../firebase';
+import { fetchProducts } from '../slices/productsSlice';
 
 export default function Home() {
   const [products, setProducts] = useState(null);
-  console.log(products);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProducts = async () => {
@@ -20,6 +22,10 @@ export default function Home() {
 
     getProducts();
   }, []);
+
+  useEffect(() => {
+    dispatch(fetchProducts(products));
+  });
 
   return (
     <div className={style.container}>

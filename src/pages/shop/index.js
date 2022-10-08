@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import FilterDrawer from '../../components/filterDrawer/filterDrawer';
 import Filter from '../../components/filter/filter';
 import styles from './styles.module.css';
 import Product from '../../components/product/product';
+import { fetchAllProducts } from '../../slices/productsSlice';
 
 function Index() {
   const [screenSize, setScreenSize] = useState(0);
+  const products = useSelector(fetchAllProducts);
 
   useEffect(() => {
     window.addEventListener('load', setScreenSize(window.innerWidth));
@@ -26,12 +29,9 @@ function Index() {
       <div className={styles.shop__container}>
         {screenSize <= 600 ? <FilterDrawer /> : <Filter />}
         <div className={styles.shop__products}>
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+          {products.map((product, i) => (
+            <Product key={i} {...product} />
+          ))}
         </div>
       </div>
     </>
