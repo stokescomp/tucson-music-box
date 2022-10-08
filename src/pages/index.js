@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { useDispatch } from 'react-redux';
@@ -26,6 +27,7 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchProducts(products));
   });
+
 
   return (
     <div className={style.container}>

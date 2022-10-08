@@ -1,10 +1,11 @@
+
 import Image from 'next/image';
 import React from 'react';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Link from 'next/link';
 
-import styles from './styles.module.css';
+
 
 function Product({
   category,
