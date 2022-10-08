@@ -21,10 +21,10 @@ class MyCarousel extends Component {
       width: '350px',
       paddingTop: '80px',
       textAlign: 'center',
-      background: '#eee',
-      color: '#000',
-      fontFamily: 'sans-serif',
-      fontSize: '14px',
+      background: '#59534A',
+      color: '#F8F6F1',
+      fontFamily: 'Poppins',
+      fontSize: '20px',
       textTransform: 'uppercase',
       borderRadius: '3px',
       margin: '0 200px',
@@ -42,11 +42,66 @@ class MyCarousel extends Component {
           spread={"wide"}
           disable_box_shadow={true}
         >
-          <div style={MyCarousel.CARD_STYLE}><img src=""></img><h2></h2></div>
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
-          <div style={MyCarousel.CARD_STYLE}><img></img><h2></h2></div>
+          <div style={MyCarousel.CARD_STYLE}><img src=""></img><h2>Gems and Minerals</h2><hr></hr>
+          <ul>
+            <li>Amethyst</li>
+            <li>Opal</li>
+            <li>Blue Quartz</li>
+            <li>Jade</li>
+            <li>Opalite</li>
+            <li>Zebra Jasper</li>
+            <li>Mangano</li>
+            <li>And More</li>
+          </ul>
+          </div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2>Fossils and Specimen</h2><hr></hr>
+          <ul>
+            <li>Double ButterFly</li>
+            <li>Shark Teeth</li>
+            <li>Shells</li>
+            <li>Starfish Fossil</li>
+            <li>Ammonite</li>
+            <li>Trilobite Fossil</li>
+            <li>And More</li>
+          </ul>
+          </div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2>Lamps and Trees</h2><hr></hr>
+          <ul>
+            <li>Salt Lamp</li>
+            <li>Opalite Tree</li>
+            <li>Selenite Tree</li>
+            <li>Gem Tree</li>
+            <li>Amethyst Lamp</li>
+            <li>And More</li>
+          </ul>
+          </div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2>Keepsake Boxes</h2><hr></hr>
+          <p>Keep your precious memories safe inside of a special box!</p>
+          <ul>
+            <li>Dog Shape</li>
+            <li>Oval Shape</li>
+            <li>And More</li>
+          </ul>
+          </div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2>Accessories</h2><hr></hr>
+          <ul>
+            <li>Crowns</li>
+            <li>Necklaces</li>
+            <li>Bracelets</li>
+            <li>Rings</li>
+            <li>Pendants</li>
+            <li>Key Chains</li>
+          </ul>
+          </div>
+          <div style={MyCarousel.CARD_STYLE}><img></img><h2>Miscellaneous</h2><hr></hr>
+          <ul>
+            <li>Sculptures</li>
+            <li>Ornate Paperweights</li>
+            <li>Figurines</li>
+            <li>Soapstone Animals</li>
+            <li>And More</li>
+          </ul>
+          </div>
         </ReactCardCarousel>
       </div>
     );
