@@ -1,33 +1,33 @@
-import React, { Component } from 'react';
-import ReactCardCarousel from 'react-card-carousel';
+import React, { Component } from "react";
+import ReactCardCarousel from "react-card-carousel";
 
 class MyCarousel extends Component {
   static get CONTAINER_STYLE() {
     return {
-      position: 'relative',
-      height: '100vh',
-      width: '100%',
-      display: 'flex',
+      position: "relative",
+      height: "100vh",
+      width: "100%",
+      display: "flex",
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'middle',
+      justifyContent: "center",
+      alignItems: "middle",
     };
   }
 
   static get CARD_STYLE() {
     return {
-      height: '450px',
-      width: '300px',
-      paddingTop: '80px',
-      textAlign: 'center',
-      background: '#eee',
-      color: '#000',
-      fontFamily: 'sans-serif',
-      fontSize: '14px',
-      textTransform: 'uppercase',
-      borderRadius: '3px',
-      margin: '0 200px',
-      boxSizing: 'border-box',
+      height: "450px",
+      width: "300px",
+      paddingTop: "80px",
+      textAlign: "center",
+      background: "#eee",
+      color: "#000",
+      fontFamily: "sans-serif",
+      fontSize: "14px",
+      textTransform: "uppercase",
+      borderRadius: "3px",
+      margin: "0 200px",
+      boxSizing: "border-box",
     };
   }
 
@@ -37,7 +37,7 @@ class MyCarousel extends Component {
         <ReactCardCarousel
           autoplay={false}
           autoplay_speed={2500}
-          spread={'wide'}
+          spread={"wide"}
           disable_box_shadow={true}
         >
           <div style={MyCarousel.CARD_STYLE}>First Card</div>
