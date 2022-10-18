@@ -87,10 +87,23 @@ export default function ButtonAppBar() {
               >
                 <Button className={style.child}>Shop</Button>
               </Link>
+              <Link
+                href='/orders'
+                sx={{ my: 2, color: '#F8F6F1', display: 'block' }}
+              >
+                <Button className={style.child}>My Orders</Button>
+              </Link>
               <Box sx={{ flexGrow: 1, display: { md: 'flex' } }}></Box>
 
               <Link href='/profile'>
                 <Button className={style.child}>Login</Button>
+              </Link>
+              <Link href='/cart'>
+                <Button className={style.child}>
+                  <Badge badgeContent={products.length} showZero={true}>
+                    <ShoppingCartIcon />
+                  </Badge>
+                </Button>
               </Link>
             </div>
           </Typography>

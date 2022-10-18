@@ -47,10 +47,6 @@ function Profile() {
     );
   }
 
-  // useEffect(() => {
-  //   setLocalStorageUserState(JSON.parse(localStorage.getItem('user')));
-  // }, [userTypeState, firebaseAuth]);
-
   useEffect(() => {
     onAuthStateChanged(firebaseAuth, (currentUser) => {
       setUser(currentUser);
@@ -190,7 +186,7 @@ function Profile() {
                           setIsUpdate(!isUpdate);
                         }}
                       >
-                        Update my info
+                        Update
                       </Button>
                     )}
                   </Grid>
@@ -220,7 +216,7 @@ function Profile() {
                           setIsUpdate(!isUpdate);
                         }}
                       >
-                        Log Out
+                        Logout
                       </Button>
                     )}
                   </Grid>
