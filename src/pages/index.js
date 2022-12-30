@@ -2,6 +2,7 @@ import BasicSlider from '../components/hero';
 import MyCarousel from '../components/accessories/index.js';
 import Categories from '../components/categories-carousel/categories';
 import style from './index.module.scss';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         <p>Rediscover your childhood favorites!</p>
         <p>Book Viking Treasures</p>
         <button className={style.button}>
-          <a href='/shop'>Shop All</a>
+        <Link href='/shop'>Shop</Link>
         </button>
       </div>
       <Categories />
@@ -27,7 +28,7 @@ export default function Home() {
           </p>
         </div>
         <button className={style.button}>
-          <a href='/shop'>Shop All</a>
+        <Link href='/shop'>Shop All</Link>
         </button>
       </div>
       <MyCarousel />
@@ -39,7 +40,7 @@ export default function Home() {
         </p>
 
         <button className={style.button}>
-          <a href='/contact'>Contact Us</a>
+        <Link href='/contact'>Contact Us</Link>
         </button>
       </div>
       <br></br>
