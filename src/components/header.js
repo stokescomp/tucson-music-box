@@ -96,10 +96,9 @@ export default function ButtonAppBar() {
                 </Link>) : (<div></div>)} */}
               <Box sx={{ flexGrow: 1, display: { md: 'flex' } }}></Box>
               {loggedIn ? 
-                ([html => (<Link href='/profile'>
+                (<><Link href='/profile'>
                 <Button className={style.child}>Profile</Button>
-              </Link>),
-              html => (<Button
+              </Link><Button
                 type='submit'
                 className={style.child}
                 onClick={(event) => {
@@ -107,14 +106,13 @@ export default function ButtonAppBar() {
                   logout();
                   setLoggedIn(!loggedIn);
                 }}
-              >Logout</Button>),
-              html => (<Link href='/cart'>
+              >Logout</Button><Link href='/cart'>
               <Button className={style.child}>
                 <Badge badgeContent={products.length} showZero={true}>
                   <ShoppingCartIcon />
                 </Badge>
               </Button>
-            </Link>)]
+            </Link></>
               ) : 
                 (<Link href='/profile'>
                 <Button className={style.child}>Login</Button>
