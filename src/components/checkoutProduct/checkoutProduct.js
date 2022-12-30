@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import styles from './styles.module.css';
 import { removeFromBasket } from '../../slices/basketSlice';
 import { Alert, Snackbar } from '@mui/material';
+import Image from 'next/image';
 
 function CheckoutProduct({
   name,
@@ -39,7 +40,7 @@ function CheckoutProduct({
   return (
     <div className={styles.checkoutProduct}>
       <div className={styles.checkoutProduct__img}>
-        <img src={imgUrl} alt={name} />
+        <Image src={imgUrl} alt={name} />
       </div>
 
       <div className={styles.checkoutProduct__info}>
