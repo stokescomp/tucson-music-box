@@ -71,8 +71,17 @@
     color: rgb(0, 139, 0);
     padding: 0;
   }
-  .product__info button:hover {
+  .add__button:hover{
+    background-color:rgba(0, 139, 0, 0.3);
+  }
+  .product__info button:hover{
+    background-color:unset;
+  }
+  .product__info .product__edit:hover {
     background-color: rgba(0, 139, 0, 0.3);
+  }
+  .product__info .product__delete:hover {
+    background-color: rgba(176, 0, 32, 0.3);
   }
 
   .modal {
@@ -85,13 +94,5 @@
 
   .product__delete {
     color: rgb(176, 0, 32);
-  }
-
-  .product__edit:hover {
-    background-color: rgba(0, 139, 0, 0.3);
-  }
-
-  .product__delete:hover {
-    background-color: rgba(176, 0, 32, 0.3);
   }
 }

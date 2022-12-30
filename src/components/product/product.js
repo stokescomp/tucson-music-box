@@ -1,12 +1,7 @@
-import Image from "next/image";
-import React, { useState } from "react";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "next/link";
-
 import styles from "./styles.module.css";
-import TransitionsModal from "../modal/modal";
-import { Edit } from "@mui/icons-material";
+import TransitionsModalEdit from "../modal/modalEdit";
+import TransitionsModalDelete from "../modal/modalDelete";
 function Product({
   category,
   color,
@@ -16,12 +11,18 @@ function Product({
   name,
   price,
   quantity,
-  id,
+  id
 }) {
-  // const [edit, onEdit] = useState();
-  // const [del, onDelete] = useState();
+  // console.log("details", category,
+  // color,
+  // description,
+  // discount,
+  // imgUrl,
+  // name,
+  // price,
+  // quantity,
+  // id)
 
-  const edit = () => {};
   return (
     <div className={styles.product}>
       <Link href={`shop/details/${id}`}>
@@ -30,20 +31,24 @@ function Product({
       <div className={styles.product__info}>
         <h4 className={styles.product__name}>{name}</h4>
         <span>${price}</span>
-        <TransitionsModal
+        <TransitionsModalEdit
           replace={"Edit Fields"}
+          imgUrl={imgUrl}
           name={name}
           description={description}
-          imgUrl={imgUrl}
           category={category}
           discount={discount}
           quantity={quantity}
           color={color}
           className={styles.modal}
           text="edit"
+          price={price}
+          id={id}
         />
-
-        <DeleteIcon className={styles.product__delete} />
+        <TransitionsModalDelete
+          replace={name}
+          id={id}
+        />
       </div>
     </div>
   );

@@ -15,10 +15,12 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { firestore } from "../../../firebase"; // update with your path to firestore config
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, setDoc, doc } from "firebase/firestore";
 import { Snackbar, Alert } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { NoEncryption } from "@mui/icons-material";
+import styles from "../product/styles.module.css";
 
 const style = {
   position: "absolute",
@@ -32,29 +34,33 @@ const style = {
   p: 4,
 };
 
-// const Alert = React.forwardRef(function Alert(props, ref) {
-//   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-// });
+const hideStyle = {
+  display: "none"
+}
 
-export default function TransitionsModal(props) {
+export default function TransitionsModalEdit(props) {
   const [toastOpen, setToastOpen] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [category, setCategory] = React.useState("");
   const nameRef = useRef();
-  const handleChange = (event) => {
+  const handleCategoryChange = (event) => {
     setCategory(event.target.value);
+    setDocCategory(event.target.value)
   };
-  let icon;
+  // console.log("props", props)
+  let icon, buttonText;
   if (props.text == "edit") {
-    icon = <EditIcon />;
+    icon = <EditIcon className={styles.product__edit} />;
+    buttonText = "Update"
   } else {
     icon = props.text;
+    buttonText = "Add"
   }
   useEffect(() => {
     if (props.name) {
-      console.log(nameRef);
+      // console.log(nameRef);
       //   nameRef.current.value = props.name;
     }
   }, []);
@@ -62,16 +68,49 @@ export default function TransitionsModal(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    addDoc(collection(firestore, "products"), {
+    console.log("data in object", data.get("name")
+    , data.get("id")
+    , data.get("description")
+    , data.get("category")
+    , data.get("discount")
+    , data.get("color")
+    , data.get("price")
+    , data.get("imageUrl")
+    )
+    // console.log("data:", data)
+    console.log("the item", {
       name: data.get("name"),
       color: data.get("color"),
       description: data.get("description"),
-      imgurl: data.get("imageURL"),
+      imgUrl: data.get("imageUrl"),
       category: data.get("category"),
       discount: data.get("discount"),
       quantity: data.get("quantity"),
       price: data.get("price"),
-    });
+    })
+    if(buttonText == "Add")
+      addDoc(collection(firestore, "products"), {
+        name: data.get("name"),
+        color: data.get("color"),
+        description: data.get("description"),
+        imgUrl: data.get("imageUrl"),
+        category: data.get("category"),
+        discount: data.get("discount"),
+        quantity: data.get("quantity"),
+        price: data.get("price"),
+      });
+    else {
+      setDoc(doc(firestore, "products", data.get("id")), {
+        name: data.get("name"),
+        color: data.get("color"),
+        description: data.get("description"),
+        imgUrl: data.get("imageUrl"),
+        category: data.get("category"),
+        discount: data.get("discount"),
+        quantity: data.get("quantity"),
+        price: data.get("price"),
+      });
+    }
     setToastOpen(true);
     handleClose();
   };
@@ -82,6 +121,15 @@ export default function TransitionsModal(props) {
 
     setToastOpen(false);
   };
+  
+  const [docName, setDocName] = useState(props.name);
+  const [docColor, setDocColor] = useState(props.color);
+  const [docDescription, setDocDescription] = useState(props.description);
+  const [docImgUrl, setDocImgUrl] = useState(props.imgUrl);
+  const [docCategory, setDocCategory] = useState(props.category);
+  const [docDiscount, setDocDiscount] = useState(props.discount);
+  const [docQuantity, setDocQuantity] = useState(props.quantity);
+  const [docPrice, setDocPrice] = useState(props.price);
 
   return (
     <>
@@ -98,7 +146,7 @@ export default function TransitionsModal(props) {
           {props.success}
         </Alert>
       </Snackbar>
-      <Button onClick={handleOpen}>{icon}</Button>
+      <Button onClick={handleOpen} className={styles.add__button}>{icon}</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -109,7 +157,7 @@ export default function TransitionsModal(props) {
         BackdropProps={{
           timeout: 500,
         }}
-      >
+      > 
         <Fade in={open}>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={style}>
             <React.Fragment>
@@ -124,6 +172,8 @@ export default function TransitionsModal(props) {
                     id="name"
                     name="name"
                     label="Name"
+                    onChange={(event) => setDocName(event.target.value)}
+                    value={docName}
                     fullWidth
                     autoComplete="given-name"
                     variant="standard"
@@ -135,6 +185,8 @@ export default function TransitionsModal(props) {
                     id="price"
                     name="price"
                     label="Price"
+                    onChange={(event) => setDocPrice(event.target.value)}
+                    value={docPrice}
                     fullWidth
                     variant="standard"
                   />
@@ -145,15 +197,24 @@ export default function TransitionsModal(props) {
                     id="description"
                     name="description"
                     label="Description"
+                    onChange={(event) => setDocDescription(event.target.value)}
+                    value={docDescription}
                     fullWidth
                     variant="standard"
+                  />
+                  <TextField sx={hideStyle}
+                    id="id"
+                    name="id"
+                    value={props.id}
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <TextField
-                    id="imageURL"
-                    name="imageURL"
+                    id="imageUrl"
+                    name="imageUrl"
                     label="image URL"
+                    onChange={(event) => setDocImgUrl(event.target.value)}
+                    value={docImgUrl}
                     fullWidth
                     variant="standard"
                   />
@@ -167,9 +228,9 @@ export default function TransitionsModal(props) {
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       name="category"
-                      value={category}
+                      value={docCategory}
                       label="Category"
-                      onChange={handleChange}
+                      onChange={handleCategoryChange}
                     >
                       <MenuItem value={"tiara"}>Tiara</MenuItem>
                       <MenuItem value={"minerals"}>Minerals</MenuItem>
@@ -187,6 +248,8 @@ export default function TransitionsModal(props) {
                     id="discount"
                     name="discount"
                     label="Discount"
+                    onChange={(event) => setDocDiscount(event.target.value)}
+                    value={docDiscount}
                     fullWidth
                     variant="standard"
                   />
@@ -198,6 +261,8 @@ export default function TransitionsModal(props) {
                     id="quantity"
                     name="quantity"
                     label="Quantity"
+                    onChange={(event) => setDocQuantity(event.target.value)}
+                    value={docQuantity}
                     fullWidth
                     autoComplete="shipping postal-code"
                     variant="standard"
@@ -209,13 +274,15 @@ export default function TransitionsModal(props) {
                     id="color"
                     name="color"
                     label="Color"
+                    onChange={(event) => setDocColor(event.target.value)}
+                    value={docColor}
                     fullWidth
                     variant="standard"
                   />
                 </Grid>
                 <Grid item xs={12}>
                   <Button type="submit" fullWidth variant="contained">
-                    Add
+                    {buttonText}
                   </Button>
                 </Grid>
               </Grid>

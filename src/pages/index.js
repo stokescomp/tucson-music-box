@@ -1,37 +1,9 @@
-import { useEffect, useState } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { useDispatch } from 'react-redux';
-
 import BasicSlider from '../components/hero';
 import MyCarousel from '../components/accessories/index.js';
 import Categories from '../components/categories-carousel/categories';
 import style from './index.module.scss';
-import { firestore } from '../../firebase';
-import { fetchProducts } from '../slices/productsSlice';
 
 export default function Home() {
-  const [products, setProducts] = useState(null);
-  const dispatch = useDispatch();
-
-  console.log(products);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      const productsSnapshot = await getDocs(collection(firestore, 'products'));
-      const productsList = productsSnapshot.docs.map((doc) => {
-        return { ...doc.data(), id: doc.id };
-      });
-
-      setProducts(productsList);
-    };
-
-    getProducts();
-  }, []);
-
-  useEffect(() => {
-    dispatch(fetchProducts(products));
-  });
-
   return (
     <div className={style.container}>
       <BasicSlider />
@@ -40,7 +12,7 @@ export default function Home() {
         <p>Rediscover your childhood favorites!</p>
         <p>Book Viking Treasures</p>
         <button className={style.button}>
-          <a href='/pages/shop/index.js'>Shop All</a>
+          <a href='/shop'>Shop All</a>
         </button>
       </div>
       <Categories />
@@ -55,7 +27,7 @@ export default function Home() {
           </p>
         </div>
         <button className={style.button}>
-          <a href='/pages/shop/index.js'>Shop All</a>
+          <a href='/shop'>Shop All</a>
         </button>
       </div>
       <MyCarousel />
@@ -67,7 +39,7 @@ export default function Home() {
         </p>
 
         <button className={style.button}>
-          <a href='http://localhost:3000/contact'>Contact Us</a>
+          <a href='/contact'>Contact Us</a>
         </button>
       </div>
       <br></br>

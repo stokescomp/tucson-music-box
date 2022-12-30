@@ -9,13 +9,13 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
-    [
-      {
-        images: {
-          domains: ['via.placeholder.com'],
-        },
-      },
-    ],
+    // [
+    //   {
+    //     images: {
+    //       domains: ['via.placeholder.com'],
+    //     },
+    //   },
+    // ],
     [
       {
         env: {

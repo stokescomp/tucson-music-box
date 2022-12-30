@@ -19,10 +19,11 @@
   .shop__products {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: left;
     flex-wrap: wrap;
     gap: 30px;
     max-width: 500px;
+    padding-bottom: 15px;
   }
 
   .shop__products div {

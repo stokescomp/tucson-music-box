@@ -35,6 +35,7 @@ function Profile() {
         variant='body2'
         color='text.secondary'
         align='center'
+        paddingBottom={2}
         {...props}
       >
         {'Copyright © '}

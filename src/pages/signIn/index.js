@@ -25,7 +25,8 @@ function Copyright(props) {
     <Typography
       variant='body2'
       color='text.secondary'
-      align='center'
+      align='right'
+      paddingBottom={2}
       {...props}
     >
       {'Copyright © '}

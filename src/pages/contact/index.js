@@ -7,7 +7,7 @@ export default function Contact() {
         <div className={contact.wordscontainer}>
           <h1 className={contact.title}>Contact Us!</h1>
           <hr></hr>
-          <p>Wed love to hear any feedback or questions you have for us.</p>
+          <p>We would love to hear any feedback or questions you have for us.</p>
           <p>
             Location: Book Viking 155 W. Main St. Suite #10 Rexburg ID 83440
           </p>
@@ -34,12 +34,13 @@ export default function Contact() {
             <br></br>
             <input type='text' name='email'></input>
             <br></br>
-            <label className={contact.message} for='message'>
+            <label className={contact.personalinfo} for='message'>
               Message:
             </label>
+            <br></br>
 
 
-            <textarea rows = "7" cols = "55" name="message"></textarea>
+            <textarea rows = "7" cols = "55" name="message" className={contact.messageBox}></textarea>
             <br></br>
             <label for='submit'></label>
             <br></br>

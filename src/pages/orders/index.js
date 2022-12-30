@@ -11,18 +11,32 @@ import { firestore } from '/firebase';
 import Title from './Title';
 
 export default function Orders() {
-  const user = JSON.parse(localStorage.getItem('user'));
+  if (typeof window !== 'undefined') {
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log("userData", user)
+  } else {
+    console.log("on the server")
+  }
   const userCollectionRef = collection(firestore, 'orders');
   const [userOrderData, setUserOrderData] = useState([]);
 
   useEffect(() => {
     const getOrdersDataFromFB = async () => {
-      const data = await getDoc(doc(userCollectionRef, user.id));
-      const dataArray = [];
-      for (const timeStamp in data.data()) {
-        dataArray.push({ timeStamp, ...data.data()[timeStamp] });
+      if (typeof window !== 'undefined') {
+        let user;
+        if(typeof user == "undefined") {
+          console.log("user was undefined, might have been a page refresh");
+          user = JSON.parse(localStorage.getItem('user'));
+        }
+        
+        const data = await getDoc(doc(userCollectionRef, user.id));
+        console.log("data orders", data.data())
+        const dataArray = [];
+        for (const timeStamp in data.data()) {
+          dataArray.push({ timeStamp, ...data.data()[timeStamp] });
+        }
+        setUserOrderData(dataArray);
       }
-      setUserOrderData(dataArray);
 
       // dataArray.forEach((data) => rows.push(createData(data)));
       // console.log(rows);
