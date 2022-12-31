@@ -3,6 +3,7 @@ import '../styles/styles.css';
 import { Provider } from 'react-redux';
 import { store } from '../app/store';
 import { StyledEngineProvider } from '@mui/material/styles';
+import { Analytics } from '@vercel/analytics/react';
 
 export function GlobalCssPriority() {
   return (
@@ -17,6 +18,7 @@ function MyApp({ Component, pageProps }) {
     <Provider store={store}>
     <Layout>
       <Component {...pageProps} />
+      <Analytics />
       </Layout>
     </Provider>
   );
