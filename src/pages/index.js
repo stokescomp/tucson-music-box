@@ -13,7 +13,7 @@ export default function Home() {
         <p>Rediscover your childhood favorites!</p>
         <p>Book Viking Treasures</p>
         <button className={style.button}>
-        <Link href='/shop'>Shop</Link>
+        <Link href='/shop' className={style.a}>Shop</Link>
         </button>
       </div>
       <Categories />
@@ -28,7 +28,7 @@ export default function Home() {
           </p>
         </div>
         <button className={style.button}>
-        <Link href='/shop'>Shop All</Link>
+        <Link href='/shop' className={style.a}>Shop All</Link>
         </button>
       </div>
       <MyCarousel />
@@ -40,7 +40,7 @@ export default function Home() {
         </p>
 
         <button className={style.button}>
-        <Link href='/contact'>Contact Us</Link>
+        <Link href='/contact' className={style.a}>Contact Us</Link>
         </button>
       </div>
       <br></br>
