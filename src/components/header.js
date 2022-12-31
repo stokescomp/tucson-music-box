@@ -92,7 +92,7 @@ export default function ButtonAppBar() {
                 href='/orders'
                 sx={{ my: 2, color: '#F8F6F1', display: 'block' }}
                 >
-                <Button className={style.child}>My Orders</Button>
+                  <Button className={style.child}>My Orders</Button>
                 </Link>) : (<></>)}
               <Box sx={{ flexGrow: 1, display: { md: 'flex' } }}></Box>
               {loggedIn ? 
