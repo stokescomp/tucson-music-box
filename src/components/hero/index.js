@@ -67,7 +67,7 @@ export default function BasicSlider() {
 
       <Slide
         shouldRenderMask
-        label=""
+        label="Textured Marble"
         background={{
           backgroundImageSrc: vol,
         }}
