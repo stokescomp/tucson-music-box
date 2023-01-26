@@ -7,6 +7,7 @@ export default function Contact() {
         <div className={contact.wordscontainer}>
           <h1 className={contact.title}>Contact Us!</h1>
           <hr></hr>
+          <p>Tucsonmucicbox.com is still under construction. Email us at bookviking@gmail.com</p>
           <p>We would love to hear any feedback or questions you have for us.</p>
           <p>
             Location: Book Viking 155 W. Main St. Suite #10 Rexburg ID 83440
@@ -26,7 +27,7 @@ export default function Contact() {
               Last Name:
             </label>
             <br></br>
-            <input type='text' name='LasttName'></input>
+            <input type='text' name='LastName'></input>
             <br></br>
             <label className={contact.personalinfo} for='email'>
               Email:
@@ -47,7 +48,7 @@ export default function Contact() {
             <input
               className={contact.submit}
               type='submit'
-              value='Submit'
+              value='Submit (Not working yet)'
             ></input>
           </form>
         </div>

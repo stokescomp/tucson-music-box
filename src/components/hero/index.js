@@ -36,6 +36,7 @@ export default function BasicSlider() {
         <Wrapper>
           <Title>Revisit Your Childhood</Title>
           <Subtitle>
+            Tucsonmucicbox.com is still under construction. Email us at bookviking@gmail.com<br/><br/>
             Explore and experience the assortment of oddities available on
             Tucson Music Box
           </Subtitle>
