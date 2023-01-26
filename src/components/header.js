@@ -80,13 +80,13 @@ export default function ButtonAppBar() {
               <Link href='/contact'>
                 <Button className={style.child}>Contact</Button>
               </Link>
-
-              <Link
+              {loggedIn ?
+              (<Link
                 sx={{ my: 2, color: '#F8F6F1', display: 'block' }}
                 href='/shop'
               >
                 <Button className={style.child}>Shop</Button>
-              </Link>
+              </Link>) : (<></>)}
               {loggedIn ?
               (<Link
                 href='/orders'
@@ -114,10 +114,11 @@ export default function ButtonAppBar() {
               </Button>
             </Link></>
               ) : 
-                (<Link href='/profile'>
-                <Button className={style.child}>Login</Button>
-              </Link>
-              )
+              //   (<Link href='/profile'>
+              //   <Button className={style.child}>Login</Button>
+              // </Link>
+              // )
+              (<></>)
               }
               
             </div>
