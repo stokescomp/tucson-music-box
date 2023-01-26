@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import style from './comps.module.scss';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -24,13 +24,16 @@ export default function ButtonAppBar() {
 
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const [loggedIn, setLoggedIn] = useState(false);
+  // if (typeof window !== 'undefined') {
+    
+  // }
+  useEffect(() => {
+    console.log("check if logged in");
+    isLoggedIn();
+  }, [])
 
-  if (typeof window !== 'undefined') {
-    // localStorage.getItem("user") !== null
-  }
-  const [loggedIn, setLoggedIn] = useState(true);
-
-  const handleOpenNavMenu = (event) => {  ``
+  const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
@@ -51,13 +54,20 @@ export default function ButtonAppBar() {
     setAnchorElUser(null);
   };
 
+  
+  const isLoggedIn = async () => {
+    if(localStorage.getItem("user") !== null){
+      setLoggedIn(true);
+      console.log('user is logged in');
+    }
+  };
+
   const logout = async () => {
     await signOut(firebaseAuth);
     localStorage.removeItem('user');
     setLoggedIn(false);
     console.log('Remove user data from localStorage');
   };
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
@@ -76,7 +86,6 @@ export default function ButtonAppBar() {
                   <DiamondIcon />
                 </Button>
               </Link>
-
               <Link href='/contact'>
                 <Button className={style.child}>Contact</Button>
               </Link>

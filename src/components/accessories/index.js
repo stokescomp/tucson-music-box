@@ -16,8 +16,6 @@ class MyCarousel extends Component {
 
   static get CARD_STYLE() {
     return {
-
-      // height: '550px',
       width: '350px',
       paddingTop: '80px',
       textAlign: 'center',
@@ -29,7 +27,12 @@ class MyCarousel extends Component {
       borderRadius: '3px',
       margin: '0 200px',
       boxSizing: 'border-box',
+    };
+  }
 
+  static get ListStyle() {
+    return {
+      listStyle: 'none'
     };
   }
 
@@ -43,7 +46,7 @@ class MyCarousel extends Component {
           disable_box_shadow={true}
         >
           <div style={MyCarousel.CARD_STYLE}><img src=""></img><h2>Gems and Minerals</h2><hr></hr>
-          <ul>
+          <ul style={MyCarousel.ListStyle}>
             <li>Amethyst</li>
             <li>Opal</li>
             <li>Blue Quartz</li>
@@ -55,7 +58,7 @@ class MyCarousel extends Component {
           </ul>
           </div>
           <div style={MyCarousel.CARD_STYLE}><img></img><h2>Fossils and Specimen</h2><hr></hr>
-          <ul>
+          <ul style={MyCarousel.ListStyle}>
             <li>Double ButterFly</li>
             <li>Shark Teeth</li>
             <li>Shells</li>
@@ -66,7 +69,7 @@ class MyCarousel extends Component {
           </ul>
           </div>
           <div style={MyCarousel.CARD_STYLE}><img></img><h2>Lamps and Trees</h2><hr></hr>
-          <ul>
+          <ul style={MyCarousel.ListStyle}>
             <li>Salt Lamp</li>
             <li>Opalite Tree</li>
             <li>Selenite Tree</li>
@@ -77,14 +80,14 @@ class MyCarousel extends Component {
           </div>
           <div style={MyCarousel.CARD_STYLE}><img></img><h2>Keepsake Boxes</h2><hr></hr>
           <p>Keep your precious memories safe inside of a special box!</p>
-          <ul>
+          <ul style={MyCarousel.ListStyle}>
             <li>Dog Shape</li>
             <li>Oval Shape</li>
             <li>And More</li>
           </ul>
           </div>
           <div style={MyCarousel.CARD_STYLE}><img></img><h2>Accessories</h2><hr></hr>
-          <ul>
+          <ul style={MyCarousel.ListStyle}>
             <li>Crowns</li>
             <li>Necklaces</li>
             <li>Bracelets</li>
@@ -94,7 +97,7 @@ class MyCarousel extends Component {
           </ul>
           </div>
           <div style={MyCarousel.CARD_STYLE}><img></img><h2>Miscellaneous</h2><hr></hr>
-          <ul>
+          <ul style={MyCarousel.ListStyle}>
             <li>Sculptures</li>
             <li>Ornate Paperweights</li>
             <li>Figurines</li>

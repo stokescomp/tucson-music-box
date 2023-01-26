@@ -16,7 +16,6 @@ class Categories extends Component {
 
   static get CARD_STYLE() {
     return {
-      // height: '500px',
       width: '400px',
       textAlign: 'center',
       background: '#59534A',

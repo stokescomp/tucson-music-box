@@ -91,7 +91,7 @@ function Profile() {
 
   const updateUserName = async (evet) => {
     event.preventDefault();
-    if (window.confirm('Are you sure to update your NAME?')) {
+    if (window.confirm('Are you sure to update your username?')) {
       await updateDoc(doc(userCollectionRef, user.uid), {
         name: updateName,
       });
@@ -101,7 +101,7 @@ function Profile() {
   };
   const updateUserEmail = async (evet) => {
     event.preventDefault();
-    if (window.confirm('Are you sure to update your EMAIL?')) {
+    if (window.confirm('Are you sure to update your email?')) {
       await updateDoc(doc(userCollectionRef, user.uid), {
         signUpEmail: updateEmail,
       });
