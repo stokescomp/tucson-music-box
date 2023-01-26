@@ -12,9 +12,9 @@ export default function Home() {
         <h1 className={style.title}>Categories</h1>
         <p>Rediscover your childhood favorites!</p>
         <p>Book Viking Treasures</p>
-        <button className={style.button}>
+        {/* <button className={style.button}>
         <Link href='/shop' className={style.a}>Shop</Link>
-        </button>
+        </button> */}
       </div>
       <Categories />
       <div className={style.accesories}>
@@ -27,9 +27,9 @@ export default function Home() {
             new home accent or gift for any loved one!
           </p>
         </div>
-        <button className={style.button}>
+        {/* <button className={style.button}>
         <Link href='/shop' className={style.a}>Shop All</Link>
-        </button>
+        </button> */}
       </div>
       <MyCarousel />
       <div className={style.contact}>
