@@ -7,12 +7,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDwJr_5c_Ubxw-i7onPNXh5G-lfVx9Op_U",
-  authDomain: "tucson-music-box-57dd0.firebaseapp.com",
-  projectId: "tucson-music-box-57dd0",
-  storageBucket: "tucson-music-box-57dd0.appspot.com",
-  messagingSenderId: "815477013504",
-  appId: "1:815477013504:web:ec7be752ff79a066282ce5",
+  apiKey: "AIzaSyCpsrA-WNupdCoWS-hWVTsC391PJBGozRY",
+  authDomain: "bookviking-aef20.firebaseapp.com",
+  projectId: "bookviking-aef20",
+  storageBucket: "bookviking-aef20.appspot.com",
+  messagingSenderId: "817178130416",
+  appId: "1:817178130416:web:c88fa3c622bc1410e84f35"
 };
 
 // Initialize Firebase
