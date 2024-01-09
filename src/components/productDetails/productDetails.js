@@ -7,11 +7,13 @@ import { addToBasket } from '../../slices/basketSlice';
 
 function ProductDetails({
   name,
+  SKU,
   description,
   price,
   category,
   discount,
   imgUrl,
+  audioUrl,
   id,
   quantity,
 }) {
@@ -22,11 +24,13 @@ function ProductDetails({
   const addToCart = () => {
     const product = {
       name,
+      SKU,
       description,
       price,
       category,
       discount,
       imgUrl,
+      audioUrl,
       id,
     };
 
