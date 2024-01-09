@@ -9,7 +9,7 @@ function Product({
   discount,
   imgUrl,
   audioUrl,
-  SKU,
+  sku,
   name,
   price,
   quantity,
@@ -38,7 +38,7 @@ function Product({
           imgUrl={imgUrl}
           audioUrl={audioUrl}
           name={name}
-          SKU={SKU}
+          sku={sku}
           description={description}
           category={category}
           discount={discount}
