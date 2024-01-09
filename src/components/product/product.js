@@ -8,8 +8,8 @@ function Product({
   description,
   discount,
   imgUrl,
-  audioUrl,
-  sku,
+  //audioUrl,
+  //sku,
   name,
   price,
   quantity,
@@ -36,9 +36,9 @@ function Product({
         <TransitionsModalEdit
           replace={"Edit Fields"}
           imgUrl={imgUrl}
-          audioUrl={audioUrl}
+          //audioUrl={audioUrl}
           name={name}
-          sku={sku}
+          //sku={sku}
           description={description}
           category={category}
           discount={discount}
